@@ -1,0 +1,61 @@
+.header-toolbar {
+  border: 1px solid;
+  border-radius: 10px;
+  max-height: 15px;
+  min-height: 15px;
+  background-color: #de3b96;
+}
+
+.match-image {
+  // width: 100px;
+  height: 100px;
+  margin: 2px auto;
+}
+
+.matches-container {
+  border-radius: 2px;
+  display: inline-block;
+  margin: 3%;
+}
+
+.main-container {
+  width: 100%;
+  margin: 5px auto;
+  border: 1px solid #6c757d;
+  margin-bottom: 8%;
+  // padding: 8%;
+}
+
+.match-title {
+  text-align: left;
+  margin: 5% 0% 0% 5.5%;
+}
+
+.rotate-arrow {
+  transform: rotate(-45deg);
+}
+
+.content {
+  display: flex;
+  transform: none !important;
+}
+
+.view-all {
+  color: #de3b96;
+}
+
+/deep/ .round-image-div {
+  position: absolute;
+  margin-top: -6%;
+  left: 47%;
+}
+
+/deep/ .round-image-class {
+    height: 150px;
+    width: 150px;
+    border-radius: 5rem;
+}
+
+/deep/ .card-footers {
+    color: #de3b96;
+}

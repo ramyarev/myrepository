@@ -1,0 +1,68 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 30px;
+    .header {
+        color: #1F5D76;
+        font-weight: 700;
+        font-size: 20px;
+        // text-shadow: 1px 1px gray;
+    }
+    swiper {
+        margin-top: 30px;
+        .swiper-slide {
+            margin-right: 0px !important;
+            height: auto;
+            .card {
+                margin: 20px;
+                .card-body {
+                    padding: 5px;
+                    padding-bottom: 15px;
+                    .card-title {
+                        font-size: 16px;
+                        margin-bottom: 0px;
+                        margin-top: 10px;
+                    }
+                    .card-text {
+                        font-size: 14px;
+                        padding: 0px 40px;
+                    }
+                    a {
+                        font-family: Futura Book Regular;
+                        font-size: 20px;
+                    }
+                }
+                .square {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 100%;
+                    .card-img-top {
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        text-align: center;
+                    }
+                }
+                .card-text {
+                    margin: 0;
+                    line-height: 1.4;
+                }
+                .options {
+                    margin-top: 10px;
+                    overflow: hidden;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

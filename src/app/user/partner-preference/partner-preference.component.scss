@@ -1,0 +1,53 @@
+.partner {
+    font-family: Futura Book Regular;
+    .title {
+        font-size: 26px;
+        color: #ff4081;
+        font-family: OptimusPrinceps;
+    }
+    .sub-title {
+        font-size: 20px;
+        color: #1d5d77;
+        font-family: OptimusPrinceps;
+    }
+    form {
+        .alert {
+            // background: transparent;
+            padding: 5px;
+            margin: 0px;
+            border: none;
+        }
+        .alert-danger {
+            font-size: 12px;
+            color: red;
+        }
+        .form-control {
+            border-radius: 0px !important;
+            border: 0.5px solid gray;
+        }
+        select {
+            width: 95%;
+            height: 33px;
+            font-size: 14px;
+            padding: 5px;
+            background: #ffffff;
+            border: none;
+            color: #495057;
+            margin-left: 2px;
+        }
+        .double {
+            width: 90%;
+        }
+    }
+    /deep/ .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.col-12,
+.col-5,
+.col {
+    padding-left: 0px;
+    padding-right: 0px;
+}

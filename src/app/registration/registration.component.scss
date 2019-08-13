@@ -1,0 +1,124 @@
+.container {
+    overflow: hidden;
+    min-height: 100%;
+    padding: 0;
+    font-size: 14px;
+    min-width: 100%;
+    background: rgb(211, 207, 207);
+    
+    .form-container {
+        min-height: 100%;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background: white;
+        overflow: hidden; 
+
+        .header {
+            margin-top: 30px;
+            text-align: center;
+            h3 {
+                color: #de3c93;
+            }
+
+            p {
+                color: #1d5d77;
+                font-weight: 600;
+            }
+        }
+        form {
+            padding: 30px;
+            margin: 0;
+            width: 100%;
+            .form-group {
+                overflow: hidden;
+                padding: 10px;
+                
+                .btn-group {
+                    width: 50%;
+                    .gender {
+                        width: 40%;
+                        margin-right: 10%;
+                        background: white;
+                        border:1px solid #ced4da;
+
+                        &.male {
+                            background: url('../../assets/images/king.png');
+                            background-repeat: no-repeat;
+                            background-size: 40px;
+                            text-align: left;
+                            padding-left: 40px;
+                        }
+                        &.female {
+                            background: url('../../assets/images/queen.png');
+                            background-repeat: no-repeat;
+                            background-size: 40px;
+                            text-align: left;
+                            padding-left: 40px;
+                        }
+                    }
+                }
+                
+                .form-control, label {
+                    width: 50%;
+                    float: left;
+                }
+                .label {
+                 height: 100%;
+                }
+                .checkbox {
+                    height: 40px;
+                    position: relative;
+
+                    label {
+                        &.terms-accept {
+                            width: 100%;
+                            div {
+                               left: 30px;
+                            }
+                            .cbx-accept {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+                }
+                
+                &.dropdown-height {
+                    overflow: visible;
+                }
+                .alert {
+                    background: transparent;
+                    border: none;
+                    float: right;
+                    width: 50%;
+                    padding: 5px;
+                    margin: 0px;
+                }
+                .alert-danger {
+                    color: red;
+                    font-size: 12px;
+                }
+            }
+            select {
+                width: 50%;
+                height: 37px;
+            }
+            .submit {
+                margin: 0 auto;
+                display: block;
+                background: #de3c93;
+                width: 30%;
+                font-size: 16px;
+                border: none;
+                color: white;
+            }
+            .header {
+                margin-left: 10px;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    }
+}

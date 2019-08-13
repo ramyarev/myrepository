@@ -1,0 +1,45 @@
+<div class="container">
+  <p class="title">MEMBERSHIP PLANS</p>
+  <div class="btn-group payment-option" role="group" aria-label="Basic example">
+    <button type="button" class="btn online">Online</button>
+    <button type="button" class="btn personalised">Personalised</button>
+  </div>
+  <p class="desc">You will get expert assistance from NM Team and all communication will be managed by assigned expert on your behalf</p>
+  <div class="package">
+    <div class="item" *ngFor="let package of selectedPlan.packages">
+      <div class="name" [ngStyle]="{'background':package.color}">
+        <div class="content vertical-center">
+          <span>{{package.name}}</span>
+        </div>
+      </div>
+      <div class="view">
+          <div class="content vertical-center">
+            <span>View</span>
+            <span class="value">{{package.view}}</span>
+            <span>Profile/Week</span>
+          </div>
+      </div>
+      <div class="validity">
+          <div class="content vertical-center">
+            <span>Validity</span>
+            <span class="value">{{package.validity}}</span>
+            <span>Months</span>
+          </div>
+      </div>
+      <div class="price">
+          <div class="content vertical-center">
+            <span>Final Price</span>
+            <span class="value">{{package.price}}</span>
+            <button class="buy">Buy Now</button>
+          </div>
+      </div>
+    </div>
+  </div><br/>
+  <p class="sub-title">FEATURES OF SUPREME PAID MEMBERSHIP</p>
+  <div class="row features">
+      <div class="col-3 feature" *ngFor="let feature of selectedPlan.features">
+        <img src="../../assets/images/{{feature.image}}">
+        <label>{{feature.name}}</label>
+      </div>
+  </div>
+</div>

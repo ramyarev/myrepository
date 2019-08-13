@@ -1,0 +1,68 @@
+<!--component html goes here -->
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span fxLayout="column" fxLayoutGap="32px" class="flex-dashboard-toolbar">
+            <!-- <button mat-button class="logo-button"> -->
+                <img _ngcontent-c1="" class="img-fluid" src="../../assets/images/logo_new.png">
+            <!-- </button> -->
+
+            <button mat-button (click) = "openDashboard()">DASHBOARD</button>
+
+            <button mat-button [matMenuTriggerFor]="matchesMenu" (click) = "openMatches()">MATCHES</button>
+            <mat-menu #matchesMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Today Matches</button>
+                <button mat-menu-item>Premium Matches</button>
+                <button mat-menu-item>Recommendations</button>
+                <button mat-menu-item>Near by me</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="searchMenu">SEARCH</button>
+            <mat-menu #searchMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="membershipPlanMenu">MEMBERSHIP PLAN</button>
+            <mat-menu #membershipPlanMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Unlimited Plan</button>
+                <button mat-menu-item>Premium Plan</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="notificationMenu">NOTIFICATION</button>
+            <mat-menu #notificationMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Accepted</button>
+                <button mat-menu-item>Interest Sent</button>
+                <button mat-menu-item>Interest Received</button>
+                <button mat-menu-item>Shortlisted</button>
+                <button mat-menu-item>Shortlisted by me</button>
+                <button mat-menu-item>Viewed by me</button>
+                <button mat-menu-item>Viewed by others</button>
+                <button mat-menu-item>Rejected</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="myOffersMenu">MY OFFERS</button>
+            <mat-menu #myOffersMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="servicesMenu">SERVICES</button>
+            <mat-menu #servicesMenu="matMenu" yPosition="below">
+                <button mat-menu-item>My Offers</button>
+                <button mat-menu-item>My Referrals</button>
+                <button mat-menu-item>Invite and Earn</button>
+            </mat-menu>
+
+            <!-- <button mat-button [matMenuTriggerFor]="searchMenu"> -->
+                <!-- <mat-icon svgIcon="notifications-png" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon> -->
+                <img _ngcontent-c1="" class="toolbar-icons" src="../../assets/images/notification.png">
+            <!-- </button> -->
+
+            <!-- <button mat-button [matMenuTriggerFor]="searchMenu">
+                <mat-icon>face</mat-icon>
+            </button> -->
+            <img _ngcontent-c1="" class="toolbar-icons" src="../../assets/images/free-mobile-highlight.png">
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>

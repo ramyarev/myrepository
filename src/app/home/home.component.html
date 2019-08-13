@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="cover-image row">
+        <div class="col-5" style="margin-top: 40px">
+            <img class="img-fluid" style="padding: 0px 20px" src="../../assets/images/logo_new.png">
+        </div>
+        <div class="col-7 btns" style="margin-top: 40px">
+            <div class="float-right d-none d-sm-block" style="margin-right: 2%;margin-top: 20px">
+                <button type="button" mat-raised-button color="accent" data-toggle="modal" data-target="#signupModal"
+                    (click)="onRegisterClicked()">
+                    Register
+                </button>
+                <button type="button" mat-raised-button color="accent" (click)="onLoginClicked()">
+                    Login
+                </button>
+                <img class="menu-btn float-right" src="../../assets/images/menu.png">
+            </div>
+            <div class="float-right d-block d-sm-none" style="margin-right: 50px">
+                <img class="menu-btn" src="../../assets/images/menu.png">
+            </div>
+        </div>
+        <div class="search-container col-10 offset-1">
+            <div class="search-box">
+                <form class="form-inline">
+                    <div class="col-sm-3 col-12 form-group">
+                        <select class="form-control" name="couples" id="couples" [(ngModel)]="selectedLookingForItem">
+                            <option *ngFor="let lookingForItem of lookingFor" [ngValue]="lookingForItem">Looking for a
+                                {{lookingForItem}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2 col-6 form-group">
+                        <select name="from-age" id="from-age" ngModel>
+                            <option value="" disabled>18 yrs</option>
+                            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2 col-6 form-group">
+                        <select name="to-age" id="to-age" ngModel>
+                            <option value="" disabled>45 yrs</option>
+                            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 col-12 form-group">
+                        <select name="religion" id="religion" ngModel>
+                            <option value="" disabled>Select a Religion</option>
+                            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+                        </select>
+                    </div>
+                    <button class="col-sm-2 col-12" mat-raised-button color="accent">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="d-none d-sm-block" style="width:100%;
+        height: fit-content;
+        margin-top: auto;">
+            <div class="web-features row">
+                <!-- <div class="col-12"> -->
+                <div class="feature-item col-sm-3">
+                    <div class="first">2+ COUNTRIES</div>
+                    <div class="second">CONNECTING BEYOND BORDERS</div>
+                </div>
+                <div class="feature-item col-sm-3">
+                    <div class="first">3200+ CITIES</div>
+                    <div class="second">ACROSS 2 COUNTRIES OF OPERATIONS</div>
+                </div>
+                <div class="feature-item col-sm-3">
+                    <div class="first">40+ LANGUAGES</div>
+                    <div class="second">OFFERING MULTILINGUAL CHOICES</div>
+                </div>
+                <div class="feature-item col-sm-3">
+                    <div class="first">490+ CASTES</div>
+                    <div class="second">WITHIN INDIA & ABROAD</div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <app-stories></app-stories>
+    <app-recently-joined></app-recently-joined>
+    <app-features></app-features>
+    <app-additional-features></app-additional-features>
+    <app-privacy></app-privacy>
+    <app-app-link></app-app-link>
+    <app-footer></app-footer>
+    <div class="topleft">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    </div>
+</div>
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    </div>
+</div> -->

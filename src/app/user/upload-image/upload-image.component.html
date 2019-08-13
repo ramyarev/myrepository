@@ -1,0 +1,63 @@
+<div class="upload">
+    <div class="row" style="width:100%">
+        <div class="offset-sm-2 col-sm-8 col-12">
+            <div class="col-12 title">
+                Upload photO
+            </div>
+            <div class="col-12">
+                <img class="img-fluid" src="../../assets/images/image_status.png" alt="status" />
+            </div>
+            <br>
+            <div class="col-12 subtitle">
+                Welcome <span *ngIf="user.gender=='Male'">Mr</span><span *ngIf="user.gender!='Male'">Miss</span> {{user.name}}
+            </div><br>
+            <div class="col-12" style="text-align: center;">
+                <img *ngIf="selectedImageURL=='' && user.profile_image==''" class="img-fluid" style="width: 160px" src="../../assets/images/upload_photo.png" alt="image" />
+                <img *ngIf="selectedImageURL!=''" class="img-fluid" style="width: 160px" [src]="selectedImageURL" alt="image" />
+                <img *ngIf="user.profile_image!='' && selectedImageURL==''" class="img-fluid" style="width: 160px" [src]="uploadedImage" alt="image" /><br><br>
+                <span style="color: #ff4081;">Don't let your special someone miss you</span><br>
+                <button (click)="openInput()" color="accent" style="border-radius:18px;font-family: unset;margin-top: 15px" type="button" mat-raised-button>
+                  Upload from Computer
+                </button>
+                <input accept=".jpg, .png, .jpeg, .gif|image/*" id="fileInput" hidden type="file" (change)="onSelectFile($event)">
+                <br>
+                <span style="font-size:10px">Allowed format .JPEG .JPG .PNG .GIF</span><br>
+                <span style="font-size:22px;margin-top: 5px">Get more response by adding your photos</span><br>
+                <span>
+                  You can increase your profile visibility by adding more photographs.<br>
+                  You can add maximum 20 photographs in your profile. And you can't update same image twice. Share 
+                  photographsof self, family and friends to let the world know more about you. 
+                </span>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6 col-12" style="color:red">
+                    <h6>Don't</h6>
+                    <ul>
+                        <li>Cropped photos</li>
+                        <li>Side face images</li>
+                        <li>With sunglasses</li>
+                        <li>Too many group photos</li>
+                        <li>Blur/Dark/Hazy photos</li>
+                        <li>Childhood photos</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-12" style="color:rgb(2, 189, 2)">
+                    <h6>Do's</h6>
+                    <ul>
+                        <li>Upload with high resolution</li>
+                        <li>Upload your recent photos</li>
+                        <li>Update some awesome solo photos</li>
+                        <li>Add photos of familiy and friends</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <button color="accent" style="border-radius:18px;font-family: unset;margin-top: 15px;width:150px" (click)="next()" mat-raised-button>
+                    Next
+                </button>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</div>

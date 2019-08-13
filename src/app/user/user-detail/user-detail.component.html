@@ -1,0 +1,217 @@
+<div class="container userDetail">
+    <div class="row" style="width: 100%;text-align: center;margin:0px">
+        <div class="title col-12">
+            Few More stepS
+        </div>
+        <div class="sub-title col-12">
+            To Search your Partner
+        </div>
+    </div>
+    <div class="row" style="width: 100%;margin: 0px">
+        <div class="offset-sm-2 col-sm-8 col-12">
+            <div class="row col-12">
+                <span style="font-family: OptimusPrinceps;">Enter your Details: </span>
+            </div>
+            <form (ngSubmit)="userSubmit()" #userForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">First Name</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" placeholder="Enter Your First Name" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" required>
+                    </div>
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="firstName.errors.required">
+                            First Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Last Name</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" placeholder="Enter Your Second Name" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" required>
+                    </div>
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="lastName.errors.required">
+                            Last Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Gender</label>
+                    </div>
+                    <div class="col-7">
+                        <fieldset>
+                            <div class="toggle">
+                                <input type="radio" name="gender" #lastName="ngModel" [(ngModel)]="user.gender" value="Male" id="sizeWeight" checked="checked" />
+                                <label for="sizeWeight">Male</label>
+                                <input type="radio" name="gender" #lastName="ngModel" [(ngModel)]="user.gender" value="Female" id="sizeDimensions" />
+                                <label for="sizeDimensions">Female</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Date of Birth</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" placeholder="Date of Birth" class="form-control" name="dob" #dob="ngModel" (ngModelChange)="dobChange($event)" [ngModel]="user.dob| date:'dd-MM-yyyy'" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-dark-blue' }"
+                            required>
+                    </div>
+                    <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="dob.errors.required">
+                            Date of Birth is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Age</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="number" placeholder="Enter Your Age" class="form-control" [(ngModel)]="user.age" name="age" #age="ngModel" required>
+                    </div>
+                    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="age.errors.required">
+                            Age is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">State</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select (change)="onStateChange(user.state)" name="state" [(ngModel)]="user.state" #state="ngModel" required>
+                                        <option value="">Select State</option>
+                                        <option *ngFor="let state of states" [ngValue]="state.id">
+                                          {{state.state}}
+                                        </option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="state.invalid && (state.dirty || state.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="state.errors.required">
+                            State is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">City</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="home_city" [(ngModel)]="user.home_city" #home_city="ngModel" required>
+                                            <option value="">Select City</option>
+                                            <option *ngFor="let city of cities" [ngValue]="city.id">
+                                              {{city.city}}
+                                            </option>
+                                          </select>
+                        </div>
+                    </div>
+                    <div *ngIf="home_city.invalid && (home_city.dirty || home_city.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="home_city.errors.required">
+                            City is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Religion</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="religion" [(ngModel)]="user.religion" #religion="ngModel" required>
+                                                <option value="">Select Religion</option>
+                                                <option *ngFor="let religion of religions" [ngValue]="religion">
+                                                  {{religion}}
+                                                </option>
+                                              </select>
+                        </div>
+                    </div>
+                    <div *ngIf="religion.invalid && (religion.dirty || religion.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="religion.errors.required">
+                            religion is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Caste</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select (change)="onCasteChange(user.caste)" name="caste" [(ngModel)]="user.caste" #caste="ngModel" required>
+                                            <option value="">Select Caste</option>
+                                            <option *ngFor="let caste of castes" [ngValue]="caste.id">
+                                              {{caste.caste}}
+                                            </option>
+                                          </select>
+                        </div>
+                    </div>
+                    <div *ngIf="caste.invalid && (caste.dirty || caste.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="caste.errors.required">
+                            caste is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Sub-Caste</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="sub_caste" [(ngModel)]="user.sub_caste" #sub_caste="ngModel">
+                                                <option value="">Select Sub Caste</option>
+                                                <option *ngFor="let subcaste of subcastes" [ngValue]="subcaste.id">
+                                                  {{subcaste.subcaste}}
+                                                </option>
+                                              </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Language</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="mother_tongue" [(ngModel)]="user.mother_tongue" #mother_tongue="ngModel" required>
+                                                <option value="">Select language</option>
+                                                <option *ngFor="let language of languages" [ngValue]="language">
+                                                  {{language}}
+                                                </option>
+                                              </select>
+                        </div>
+                    </div>
+                    <div *ngIf="mother_tongue.invalid && (mother_tongue.dirty || mother_tongue.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="mother_tongue.errors.required">
+                            Language is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row" style="margin-top: 5px">
+                    <div class="col-12">
+                        <mat-checkbox name="agree" [(ngModel)]="agree">
+                            <span style="font-family: OptimusPrinceps;">By submitting you agree to our
+                                 <span style="color:#ff4081">privacy policy</span> and <span style="color:#ff4081">T&C</span>
+                            </span>
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row" style="margin-top: 5px">
+                    <div class="offset-3 col-6">
+                        <button color="accent" style="border-radius:18px;width: 100%;font-family: unset;" type="submit" [disabled]="userForm.form.invalid || !agree" mat-raised-button>Sign up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

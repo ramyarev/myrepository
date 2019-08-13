@@ -1,0 +1,39 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+        <a class="navbar-brand"><img class="logo" src="../../assets/images/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/main/dashboard']" routerLinkActive="active">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/main/userupdate']" routerLinkActive="active">EDIT PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">SEARCH</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/main/package']" routerLinkActive="active">DISCOVER PLAN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/main/chats']" routerLinkActive="active">INBOX</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/main/package']" routerLinkActive="active">BUY PLAN</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/main/notifications']" routerLinkActive="active"><img src="../../assets/images/notification.png"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><img src="../../assets/images/male_user.png"></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

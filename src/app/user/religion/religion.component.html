@@ -1,0 +1,113 @@
+<div class="basic">
+    <div class="row" style="width:100%">
+        <div class="offset-sm-2 col-sm-8 col-12">
+            <div class="col-12 title">
+                Educational detailS
+            </div>
+            <div class="col-12">
+                <img class="img-fluid" src="../../assets/images/education_status.png" alt="status" />
+            </div>
+            <br>
+            <form (ngSubmit)="religionDetails()" #religionForm="ngForm"> 
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Natchathiram</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="star" [(ngModel)]="user.star" #star="ngModel" required>
+                                        <option value="">Select Natchathiram</option>
+                                        <option *ngFor="let star of stars" [ngValue]="star">
+                                            {{star}}
+                                          </option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="star.invalid && (star.dirty || star.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="star.errors.required">
+                            Natchathiram is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Raasi</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="raasi" [(ngModel)]="user.raasi" #raasi="ngModel" required>
+                                        <option value="">Select raasi</option>
+                                        <option *ngFor="let raasi of raasis" [ngValue]="raasi">
+                                            {{raasi}}
+                                          </option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="raasi.invalid && (raasi.dirty || raasi.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="raasi.errors.required">
+                            Raasi is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Paadham</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="paadham" [(ngModel)]="user.paadham" #paadham="ngModel" required>
+                                        <option value="">Select paadham</option>
+                                        <option value="1st Padham">1st Padham</option>
+                                        <option value="2nd Padham">2nd Padham</option>
+                                        <option value="3rd Padham">3rd Padham</option>
+                                        <option value="4th Padham">4th Padham</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="paadham.invalid && (paadham.dirty || paadham.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="paadham.errors.required">
+                            Paadham is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Dosham</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="having_dosham" [(ngModel)]="user.having_dosham" #having_dosham="ngModel" required>
+                                        <option value="">Select dosham</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="having_dosham.invalid && (having_dosham.dirty || having_dosham.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="having_dosham.errors.required">
+                            Dosham is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Horoscope Details</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="horoscope_details" [(ngModel)]="user.horoscope_details" #horoscope_details="ngModel">
+                                            <option value="">Select horoscope details</option>
+                                            <option *ngFor="let horoscope of horoscopes" [ngValue]="horoscope">
+                                                {{horoscope}}
+                                              </option>
+                                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 5px;text-align: center;">
+                    <button color="accent" style="border-radius:18px;font-family: unset;width:150px" type="submit" [disabled]="religionForm.form.invalid" mat-raised-button>Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

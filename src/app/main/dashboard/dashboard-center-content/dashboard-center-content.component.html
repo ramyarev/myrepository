@@ -1,0 +1,192 @@
+<mat-toolbar class="header-toolbar">
+  <mat-toolbar-row class="title"></mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main-container" fxLayout="column" fxLayoutGap="32px">
+  <div class="match-title">NEW MATCHES</div>
+  <ngx-hm-carousel 
+    [(ngModel)]="currentIndex" 
+    [show-num]="3" 
+    [autoplay-speed]="speed" 
+    [drag-many]="true" 
+    [aniTime]="200" 
+    class="carousel c-accent">
+
+    <div ngx-hm-carousel-container class="content">
+      <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+        <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu">
+        <div>NM-7683746</div>
+        <div>20, Never Married</div>
+        <div>Chennai, Tamilnadu</div>
+        <div>
+          <app-card-footer-icon></app-card-footer-icon>
+        </div>
+      </div>
+      <!-- <ng-template #infiniteContainer></ng-template> -->
+    </div>
+  
+    <ng-template #carouselContent let-avatar let-i="index">
+      <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+        <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+          {{i}}
+        </div>
+      </article>
+    </ng-template>
+
+    <ng-template #carouselPrev>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+    </ng-template>
+    <ng-template #carouselNext>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </ng-template>
+
+    <ng-template #carouselProgress let-progress>
+      <div class="progress"></div>
+    </ng-template>
+
+  </ngx-hm-carousel>
+  <div class="view-all">
+      <button mat-button>View All</button>
+  </div>
+  <!-- <div *ngFor="let row of [1,2,3]" class="matches-container">
+    <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu">
+    <div>NM-7683746</div>
+    <div>20, Never Married</div>
+    <div>Chennai, Tamilnadu</div>
+    <div>
+      <app-card-footer-icon></app-card-footer-icon>
+    </div>
+  </div> -->
+</div>
+
+<div class="main-container" fxLayout="column" fxLayoutGap="32px">
+  <div class="match-title">TODAY MATCHES</div>
+  <ngx-hm-carousel 
+    [(ngModel)]="currentIndex" 
+    [show-num]="3" 
+    [autoplay-speed]="speed" 
+    [drag-many]="true" 
+    [aniTime]="200" 
+    class="carousel c-accent">
+
+    <div ngx-hm-carousel-container class="content">
+      <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+        <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu">
+        <div>NM-7683746</div>
+        <div>20, Never Married</div>
+        <div>Chennai, Tamilnadu</div>
+        <div>
+          <app-card-footer-icon></app-card-footer-icon>
+        </div>
+      </div>
+      <!-- <ng-template #infiniteContainer></ng-template> -->
+    </div>
+  
+    <ng-template #carouselContent let-avatar let-i="index">
+      <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+        <div class="img" (click)="click(i)" [style.backgroundImage]="'url(assets/images/photos/DASHBOARD.JPG)'">
+          {{i}}
+        </div>
+      </article>
+    </ng-template>
+
+    <ng-template #carouselPrev>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+    </ng-template>
+    <ng-template #carouselNext>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </ng-template>
+
+    <ng-template #carouselProgress let-progress>
+      <div class="progress"></div>
+    </ng-template>
+
+  </ngx-hm-carousel>
+  <div class="view-all">
+      <button mat-button>View All</button>
+  </div>
+  <!-- <div *ngFor="let row of [1,2,3]" class="matches-container">
+    <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu">
+    <div>NM-7683746</div>
+    <div>20, Never Married</div>
+    <div>Chennai, Tamilnadu</div>
+    <div>
+      <app-card-footer-icon></app-card-footer-icon>
+    </div>
+  </div> -->
+</div>
+
+<div class="main-container" fxLayout="column" fxLayoutGap="32px">
+  <div class="match-title">RECOMMENDATIONS</div>
+  <ngx-hm-carousel 
+    [(ngModel)]="currentIndex" 
+    [show-num]="3" 
+    [autoplay-speed]="speed" 
+    [drag-many]="true" 
+    [aniTime]="200" 
+    class="carousel c-accent">
+
+    <div ngx-hm-carousel-container class="content">
+      <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+        <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu">
+        <div>NM-7683746</div>
+        <div>20, Never Married</div>
+        <div>Chennai, Tamilnadu</div>
+        <div>
+          <app-card-footer-icon></app-card-footer-icon>
+        </div>
+      </div>
+      <!-- <ng-template #infiniteContainer></ng-template> -->
+    </div>
+  
+    <ng-template #carouselContent let-avatar let-i="index">
+      <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+        <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+          {{i}}
+        </div>
+      </article>
+    </ng-template>
+
+    <ng-template #carouselPrev>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+    </ng-template>
+    <ng-template #carouselNext>
+      <div class="click-area">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </ng-template>
+
+    <ng-template #carouselProgress let-progress>
+      <div class="progress"></div>
+    </ng-template>
+
+  </ngx-hm-carousel>
+  <div class="view-all">
+      <button mat-button>View All</button>
+  </div>
+  <!-- <div *ngFor="let row of [1,2,3]" class="matches-container">
+    <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu">
+    <div>NM-7683746</div>
+    <div>20, Never Married</div>
+    <div>Chennai, Tamilnadu</div>
+    <div>
+      <app-card-footer-icon></app-card-footer-icon>
+    </div>
+  </div> -->
+</div>

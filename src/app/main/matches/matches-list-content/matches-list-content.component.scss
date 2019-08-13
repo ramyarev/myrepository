@@ -1,0 +1,52 @@
+.main-container {
+  width: 100%;
+  margin: 5px auto;
+  border: 1px solid #6c757d;
+  margin-bottom: 8%;
+}
+
+.grid-container {
+    display: block !important;
+}
+
+.flex-container {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.flex-container .mat-flex {
+    flex: 2 1 28%;
+    margin: 3px;
+}
+
+.flex-container .mat-flex-list {
+    border: 1px solid #000;
+    flex: 1 1 100%;
+    margin: 3px;
+}
+
+.view-layout {
+    display: block;
+    float: left;
+}
+
+.content-section {
+  width: 50%;
+  height: 100%;
+}
+
+.match-image {
+  width: 100px;
+  height: 100px;
+  margin: 2px auto;
+}
+
+.match-image-list {
+  width: 300px;
+  height: 300px;
+  margin: 2px auto;
+}
+
+.list-match-details {
+    display: inline-block;
+}

@@ -1,0 +1,46 @@
+.container {
+    max-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    .header {
+        height: 80px;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: url('../../assets/images/otp-header.png');
+        background-size: 100% 100%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        .logo {
+            width: 200px;
+        }
+        .nav-item {
+            font-size: 16px;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: relative;
+            font-weight: 600;
+            cursor: pointer;
+
+            &.active .nav-link {
+                color: #de3c93;
+            }
+            .nav-link {
+                height: 80px;
+                line-height: 80px;
+                color: #333333;
+                &.active {
+                    color: #de3c93;
+                }
+            }
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    .content{
+        margin-top: 80px;
+    }
+}

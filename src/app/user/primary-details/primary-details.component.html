@@ -1,0 +1,238 @@
+<div class="basic">
+    <div class="row" style="width:100%">
+        <div class="offset-sm-2 col-sm-8 offset-0 col-12">
+            <div class="col-12 title">
+                Update basic detailS
+            </div>
+            <div class="col-12">
+                <img class="img-fluid" src="../../assets/images/basic_status.png" alt="status" />
+            </div>
+            <br>
+            <form (ngSubmit)="basicDetails()" #basicForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">About your myself</label>
+                    </div>
+                    <div class="col-7">
+                        <textarea type="text" placeholder="Write about yourself" class="form-control" [(ngModel)]="user.about_myself" name="about_myself" #about_myself="ngModel" required></textarea>
+                    </div>
+                    <div *ngIf="about_myself.invalid && (about_myself.dirty || about_myself.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="about_myself.errors.required">
+                            Should right few words about yourself.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Height</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="height" [(ngModel)]="user.height" #height="ngModel" required>
+                                    <option value="">Select height</option>
+                                    <option *ngFor="let height of heights" value="{{height}}">{{height}}</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div *ngIf="height.invalid && (height.dirty || height.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="height.errors.required">
+                            Height is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Weight</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="weight" [(ngModel)]="user.weight" #weight="ngModel" required>
+                                            <option value="">Select weight</option>
+                                            <option *ngFor="let weight of weights" value="{{weight}}">{{weight}} Kg</option>
+                                        </select>
+                        </div>
+                    </div>
+                    <div *ngIf="weight.invalid && (weight.dirty || weight.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="weight.errors.required">
+                            Weight is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Body Type</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="body_type" [(ngModel)]="user.body_type" #body_type="ngModel" required>
+                                        <option value="">Select body type</option>
+                                        <option value="Slim">Slim</option>
+                                        <option value="fit">Fat</option>
+                                        <option value="Normal">Normal</option>
+                                        <option value="Don't wish to specify">Don't wish to specify</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="body_type.invalid && (body_type.dirty || body_type.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="body_type.errors.required">
+                            Body Type is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Complexion</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="complexion" [(ngModel)]="user.complexion" #complexion="ngModel" required>
+                                        <option value="">Select Complexion</option>
+                                        <option value="Fair">Fair</option>
+                                        <option value="Very fair">Very fair</option>
+                                        <option value="wheatish">wheatish</option>
+                                        <option value="Dusky">Dusky</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Don't wish to specify">Don't wish to specify</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="complexion.invalid && (complexion.dirty || complexion.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="complexion.errors.required">
+                            Complexion is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Physical Status</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="physical_status" [(ngModel)]="user.physical_status" #physical_status="ngModel" required>
+                                        <option value="">Select Physical Status</option>
+                                        <option value="Normal">Normal</option>
+                                        <option value="Physically challenged">Physically challenged</option>
+                                        <option value="Does not matter">Does not matter</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="physical_status.invalid && (physical_status.dirty || physical_status.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="physical_status.errors.required">
+                            Physical Status is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Smoking Habit</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="smoking_habits" [(ngModel)]="user.smoking_habits" #smoking_habits="ngModel" required>
+                                        <option value="">Select Smoking Habit</option>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="Occassionally">Occassionally</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="smoking_habits.invalid && (smoking_habits.dirty || smoking_habits.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="smoking_habit.errors.required">
+                            Mention wether you have smoking habit or not.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Drinking Habit</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="drinking_habits" [(ngModel)]="user.drinking_habits" #drinking_habits="ngModel" required>
+                                        <option value="">Select Drinking Habit</option>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="Occassionally">Occassionally</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="drinking_habits.invalid && (drinking_habits.dirty || drinking_habits.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="drinking_habits.errors.required">
+                            Mention wether you have drinking habitt or not.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Eating Habbit</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="eating_habits" [(ngModel)]="user.eating_habits" #eating_habits="ngModel" required>
+                                        <option value="">Select eating habbit</option>
+                                        <option value="Occassionally Non-Veg">Occassionally Non-Veg</option>
+                                        <option value="Veg">Veg</option>
+                                        <option value="Eggetarian">Eggetarian</option>
+                                        <option value="Non-veg">Non-veg</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="eating_habits.invalid && (eating_habits.dirty || eating_habits.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="eating_habits.errors.required">
+                            Eating Habbit is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Martial Status</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="martial_status" [(ngModel)]="user.marital_status" #martial_status="ngModel" required>
+                                        <option value="">Select martial status</option>
+                                        <option value="ANY">ANY</option>
+                                        <option value="NEVER MARRIED">NEVER MARRIED</option>
+                                        <option value="WIDOWED">WIDOWED</option>
+                                        <option value="DIVORCED">DIVORCED</option>
+                                        <option value="AWAITING DIVORCE">AWAITING DIVORCE</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="martial_status.invalid && (martial_status.dirty || martial_status.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="martial_status.errors.required">
+                            Martial Status is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">No. of Children</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="no_of_children" [(ngModel)]="user.no_of_children" #no_of_children="ngModel" required>
+                                        <option value="">Select no. of children</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="no_of_children.invalid && (no_of_children.dirty || no_of_children.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="no_of_children.errors.required">
+                            No. of Children details is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 5px;text-align: center;">
+                    <button color="accent" style="border-radius:18px;font-family: unset;width:150px" type="submit" [disabled]="basicForm.form.invalid" mat-raised-button>Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

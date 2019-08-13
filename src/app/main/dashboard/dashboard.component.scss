@@ -1,0 +1,61 @@
+/* .wrapper {
+    position: relative;
+    text-align: center;
+    .cover-image { 
+        width: 100%;
+    }
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+        border: 3px solid #1d5d77;
+        position: relative;
+        margin-top: -100px;
+    }
+    .edit-btn {
+        position: absolute;
+        right: 15%;
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 40px;
+        margin-top: -20px;
+        border-radius: 20px;
+    }
+    .profile-detail {
+        margin-top: 20px;
+        span {
+            display: block;
+        }
+    }
+
+    .tabs {
+        margin-top: 20px;
+        background-image: linear-gradient(#5FCEFA,#20627C) !important;
+        width: 100%;
+        button {
+            width: 25%;
+            background: transparent;
+            padding: 10px;
+            border: none;
+            color: white;
+        }
+    }
+} */
+
+/deep/  {
+    @font-face {
+        font-family: "OptimusPrinceps";
+        src: url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.eot');
+        src: url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.eot?#iefix') format('embedded-opentype'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.svg#OptimusPrinceps') format('svg'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.woff') format('woff'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/deep/ .dashboard-content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: url("../../../assets/images/bgstories.png");
+    background-size: 100%;
+    margin-top: -0.5%;
+  }

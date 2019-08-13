@@ -1,0 +1,73 @@
+.search-container {
+  // margin: 2px;
+  background-color: white;
+  border: 1px solid #666666;
+
+  .title {
+    padding-top: 5%;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .mat-input-flex.mat-form-field-flex {
+    border: 1px solid black;
+  }
+
+  .mat-select {
+    border: 0.3px solid #666666;
+  }
+
+  .mat-input {
+    width: 100px;
+  }
+
+  .age {
+    width: 60px;
+  }
+
+  .field-label {
+    display: flex;
+    margin: 5px 0px;
+  }
+
+  .age-flex {
+    display: flex;
+    flex-flow: wrap;
+    height: 100%;
+  }
+
+  .searchField {
+    border-radius: 1;
+  }
+
+  .search {
+    margin: 10px auto 5px;
+    display: flex;
+    border: 1px solid #666666;
+    background-color: #de3b96;
+    min-height: 30px;
+    border-radius: 1;
+
+    
+  }
+
+  .searchForm {
+    padding: 16px;
+  }
+
+  ::ng-deep .mat-input-underline {
+    display: none;
+  }
+
+  .mat-form-field {
+    line-height: unset;
+  }
+
+  .mat-form-field-underline {
+    display: none !important;
+  }
+}
+
+/deep/ .mat-form-field-underline {
+  display: none;
+}

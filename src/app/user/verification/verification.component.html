@@ -1,0 +1,56 @@
+<div class="verification" *ngIf="!verified">
+    <div class="title col-12">
+        Please verify your number
+    </div>
+    <div class="row">
+        <div class="offset-sm-2 col-sm-8 offset-0 col-12">
+            <div class="row sub-title">Why Verification is necessary?</div>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <img class="img-fluid" src="../../assets/images/otp.png" alt="Verification" />
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p style="text-align:right; margin-top: 20%">
+                        By verifying email address and mobile number trust and score will be increased. Profile having good trust score get's more intersts from other users.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div>Please enter verification code sent to your mobile number<br> +91 {{user.mobile_number}}</div>
+            </div>
+            <div class="row">
+                <div class="offset-sm-3 col-sm-6 col-12" style="text-align:center">
+                    <input type="text" placeholder="Enter OTP" class="form-control" [(ngModel)]="otp" name="otp" #firstName="ngModel">
+                    <br>
+                    <button color="accent" (click)="verifyOTP(otp)" style="border-radius:18px;width: 50%;font-family: unset;" type="button" [disabled]="!otp" mat-raised-button>Verify</button>
+                    <br>
+                    <div *ngIf="errorMsg">
+                        <br>
+                        <div style="font-size: 20px" class="alert alert-danger">
+                            {{errorMsg}}
+                        </div>
+                    </div>
+                    <br>
+                    <div>Don't recive a code? <a style="color: #1F5D76">Resend Code</a></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6 col-12" style="padding-left:0px">
+                    <p>Please verify your E-mail Address. We have sent the verification code to {{user.email}} </p>
+                    <div>Don't recive mail? <a style="color: #1F5D76">Resend mail</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="verification" *ngIf="verified">
+    <div style="width: 100%;text-align: center">
+        <img style="width: 30%" class="img-fluid" src="../../assets/images/verified.png" alt="Verified" />
+        <br>
+        <span>Your mobile number and E-mail ID has been successfully verified</span>
+        <br><br>
+        <button color="accent" (click)="verifiedAction()" style="border-radius:18px;font-family: unset;" type="button" mat-raised-button>Share your Details Now</button>
+    </div>
+    <br><br>
+</div>

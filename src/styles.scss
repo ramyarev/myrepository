@@ -1,0 +1,60 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import '~@angular/material/theming';
+@include mat-core();
+$candy-app-primary: mat-palette($mat-blue-gray, 700);
+$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+@include angular-material-theme($candy-app-theme);
+@font-face {
+    font-family: "OptimusPrinceps";
+    src: url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.eot');
+    src: url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.eot?#iefix') format('embedded-opentype'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.svg#OptimusPrinceps') format('svg'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.woff') format('woff'), url('src/assets/fonts/OptimusPrinceps/OptimusPrinceps.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Futura Book Regular";
+    src: url("src/assets/fonts/Futura/Futura_Book_Regular.otf");
+}
+
+.mat-checkbox-layout {
+    white-space: normal !important;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+ ::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}

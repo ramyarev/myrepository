@@ -1,0 +1,189 @@
+<div class="whole-container">
+  <div class="main-container" fxLayout="column" fxLayoutGap="32px">
+    <div *ngIf="(showThisMatch$ | async) === 'VIEW'" class="match-title">TODAY MATCHES</div>
+    <ngx-hm-carousel [(ngModel)]="currentIndex" [show-num]="3" [autoplay-speed]="speed" [drag-many]="true"
+      [aniTime]="200" class="carousel c-accent">
+
+      <div ngx-hm-carousel-container class="content">
+        <div ngx-hm-carousel-item *ngFor="let row of (todayMatches$ | async)" class="matches-container">
+          <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu">
+          <div>NM-7683746</div>
+          <div>20, Never Married</div>
+          <div>Chennai, Tamilnadu</div>
+          <div>
+            <app-card-footer-icon></app-card-footer-icon>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+          <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+            {{i}}
+          </div>
+        </article>
+      </ng-template>
+
+      <ng-template #carouselPrev>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </ng-template>
+
+      <ng-template #carouselProgress let-progress>
+        <div class="progress"></div>
+      </ng-template>
+
+    </ngx-hm-carousel>
+    <div class="view-all">
+      <button mat-button data-view="TODAY">View All</button>
+    </div>
+  </div>
+
+  <div class="main-container" fxLayout="column" fxLayoutGap="32px">
+    <div class="match-title">PREMIUM MATCHES</div>
+    <ngx-hm-carousel [(ngModel)]="currentIndex" [show-num]="3" [autoplay-speed]="speed" [drag-many]="true"
+      [aniTime]="200" class="carousel c-accent">
+
+      <div ngx-hm-carousel-container class="content">
+        <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+          <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu">
+          <div>NM-7683746</div>
+          <div>20, Never Married</div>
+          <div>Chennai, Tamilnadu</div>
+          <div>
+            <app-card-footer-icon></app-card-footer-icon>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+          <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+            {{i}}
+          </div>
+        </article>
+      </ng-template>
+
+      <ng-template #carouselPrev>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </ng-template>
+
+      <ng-template #carouselProgress let-progress>
+        <div class="progress"></div>
+      </ng-template>
+
+    </ngx-hm-carousel>
+    <div class="view-all">
+      <button data-view="PREMIUM" mat-button>View All</button>
+    </div>
+  </div>
+
+  <div class="main-container" fxLayout="column" fxLayoutGap="32px">
+    <div class="match-title">RECOMMENDATIONS</div>
+    <ngx-hm-carousel [(ngModel)]="currentIndex" [show-num]="3" [autoplay-speed]="speed" [drag-many]="true"
+      [aniTime]="200" class="carousel c-accent">
+
+      <div ngx-hm-carousel-container class="content">
+        <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+          <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu">
+          <div>NM-7683746</div>
+          <div>20, Never Married</div>
+          <div>Chennai, Tamilnadu</div>
+          <div>
+            <app-card-footer-icon></app-card-footer-icon>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+          <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+            {{i}}
+          </div>
+        </article>
+      </ng-template>
+
+      <ng-template #carouselPrev>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </ng-template>
+
+      <ng-template #carouselProgress let-progress>
+        <div class="progress"></div>
+      </ng-template>
+
+    </ngx-hm-carousel>
+    <div class="view-all">
+      <button data-view="RECOMMENDATIONS" mat-button>View All</button>
+    </div>
+  </div>
+
+  <div class="main-container" fxLayout="column" fxLayoutGap="32px">
+    <div class="match-title">NEAR BY ME</div>
+    <ngx-hm-carousel [(ngModel)]="currentIndex" [show-num]="3" [autoplay-speed]="speed" [drag-many]="true"
+      [aniTime]="200" class="carousel c-accent">
+
+      <div ngx-hm-carousel-container class="content">
+        <div ngx-hm-carousel-item *ngFor="let row of [0,1,2]" class="matches-container">
+          <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu">
+          <div>NM-7683746</div>
+          <div>20, Never Married</div>
+          <div>Chennai, Tamilnadu</div>
+          <div>
+            <app-card-footer-icon></app-card-footer-icon>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+          <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+            {{i}}
+          </div>
+        </article>
+      </ng-template>
+
+      <ng-template #carouselPrev>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </ng-template>
+
+      <ng-template #carouselProgress let-progress>
+        <div class="progress"></div>
+      </ng-template>
+
+    </ngx-hm-carousel>
+    <div class="view-all">
+      <button data-view="NEAR_BY_ME" mat-button>View All</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="section-container">
+    <mat-card class="inbox-section mat-elevation-z'">
+      <mat-card-content>
+        <app-matches-left-side-content></app-matches-left-side-content>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="content-section mat-elevation-z'">
+      <mat-card-content>
+          <app-matches-center-content *ngIf="(displayContent$ | async) === 'VIEW'"></app-matches-center-content>
+          <app-matches-list-content *ngIf="(displayContent$ | async) !== 'VIEW'"></app-matches-list-content>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="search-section mat-elevation-z'">
+      <mat-card-content>
+        <app-matches-right-side-content></app-matches-right-side-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

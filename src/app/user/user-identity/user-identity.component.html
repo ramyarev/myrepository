@@ -1,0 +1,92 @@
+<div class="upload">
+    <div class="row" style="width:100%">
+        <div class="offset-sm-2 col-sm-8 col-12 offset-0">
+            <div class="col-12 title">
+                Share your identitY
+            </div>
+            <div class="col-12">
+                <img class="img-fluid" src="../../assets/images/image_status.png" alt="status" />
+            </div><br>
+            <div class="col-12">
+                <span>
+                  Authentic genuine profile receives maximum responses.<br>
+                  Upload your Id document to confirm your identity
+              </span><br><br>
+                <span class="subtitle">
+                Upload ID Document:
+              </span><br>
+                <span>
+                You may choose to upload Aadhar, PAN Card, Passport or Driving<br>
+                license / any other identification document  
+              </span><br><br>
+            </div>
+        </div>
+        <div class="offset-sm-2 col-sm-10 col-12 offset-0">
+            <div class="col-12">
+                <mat-tab-group color="accent">
+                    <mat-tab>
+                        <ng-template mat-tab-label autofocus>
+                            <span style="color:#1d5d77;font-family: Futura Book Regular;font-size: large;">Aadhar</span>
+                        </ng-template>
+                        <br><br>
+                        <div class="col-12 col-sm-10 col-md-7">
+                            <div style="display:flex">
+                                <input accept="image/jpeg,image/gif,image/png,application/pdf,image/jpg" type="file" (change)="onSelectFile($event)" style="width: 100%;font-family: Futura Book Regular;" type="file" placeholder="No Files Selected" class="form-control">
+                                <button color="accent" style="border-radius: 0px;font-family: Futura Book Regular;width: 100px;height: 45px;margin-top: -3px;" (click)="upload()" mat-raised-button>
+                                  Upload
+                              </button>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <span style="color:#1d5d77;font-family: Futura Book Regular;font-size: large;">PAN Card</span>
+                        </ng-template>
+                        <br><br>
+                        <div class="col-12 col-sm-10 col-md-7">
+                            <div style="display:flex">
+                                <input accept="image/jpeg,image/gif,image/png,application/pdf,image/jpg" type="file" (change)="onSelectFile($event)" style="width: 100%;font-family: Futura Book Regular;" type="file" placeholder="No Files Selected" class="form-control">
+                                <button color="accent" style="border-radius: 0px;font-family: Futura Book Regular;width: 100px;height: 45px;margin-top: -3px;" (click)="upload()" mat-raised-button>
+                                      Upload
+                                  </button>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <span style="color:#1d5d77;font-family: Futura Book Regular;font-size: large;">Passport</span>
+                        </ng-template>
+                        <br><br>
+                        <div class="col-12 col-sm-10 col-md-7">
+                            <div style="display:flex">
+                                <input accept="image/jpeg,image/gif,image/png,application/pdf,image/jpg" type="file" (change)="onSelectFile($event)" style="width: 100%;font-family: Futura Book Regular;" type="file" placeholder="No Files Selected" class="form-control">
+                                <button color="accent" style="border-radius: 0px;font-family: Futura Book Regular;width: 100px;height: 45px;margin-top: -3px;" (click)="upload()" mat-raised-button>
+                                      Upload
+                                  </button>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <span style="color:#1d5d77;font-family: Futura Book Regular;font-size: large;">License</span>
+                        </ng-template>
+                        <br><br>
+                        <div class="col-12 col-sm-10 col-md-7">
+                            <div style="display:flex">
+                                <input accept="image/jpeg,image/gif,image/png,application/pdf,image/jpg" type="file" (change)="onSelectFile($event)" style="width: 100%;font-family: Futura Book Regular;" type="file" placeholder="No Files Selected" class="form-control">
+                                <button color="accent" style="border-radius: 0px;font-family: Futura Book Regular;width: 100px;height: 45px;margin-top: -3px;" (click)="upload()" mat-raised-button>
+                                      Upload
+                                  </button>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="offset-2 col-8" style="text-align:center">
+            <button color="accent" style="border-radius:18px;font-family: unset;width:150px" (click)="next()" mat-raised-button>Next</button>
+        </div>
+        <br><br><br><br>
+    </div>
+</div>

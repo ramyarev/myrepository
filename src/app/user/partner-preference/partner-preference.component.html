@@ -1,0 +1,318 @@
+<div class="container partner">
+    <div class="row" style="width: 100%;text-align: center">
+        <div class="title col-12">
+            Partner preferencE
+        </div><br>
+        <div class="col-12">
+            <img class="img-fluid" src="../../assets/images/complete_status.png" alt="status" />
+        </div><br><br><br>
+    </div>
+    <div class="row" style="width: 100%">
+        <div class="offset-sm-2 col-sm-8 col-12" style="padding-left: 0px;padding-right: 0px;">
+            <form (ngSubmit)="preferenceSubmit()" #preferenceForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Age</label>
+                    </div>
+                    <div class="col" style="margin-right: 2%">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="min_age" [(ngModel)]="user.min_age" #min_age="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let age of ages" value="{{age}}">{{age}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="max_age" [(ngModel)]="user.max_age" #max_age="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let age of ages" value="{{age}}">{{age}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Height</label>
+                    </div>
+                    <div class="col" style="margin-right: 2%">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="min_height" [(ngModel)]="user.min_height" #min_height="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let height of heights" value="{{height}}">{{height}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="max_height" [(ngModel)]="user.max_height" #max_height="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let height of heights" value="{{height}}">{{height}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Weight</label>
+                    </div>
+                    <div class="col" style="margin-right: 2%">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="min_weight" [(ngModel)]="user.min_weight" #min_weight="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let weight of weights" value="{{weight}}">{{weight}} Kg</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select class="double" name="max_weight" [(ngModel)]="user.max_weight" #max_weight="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let weight of weights" value="{{weight}}">{{weight}} Kg</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Caste</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select (change)="onCasteChange(user.caste)" name="caste" [(ngModel)]="user.caste" #caste="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let caste of castes" [ngValue]="caste.id">
+                                    {{caste.caste}}
+                                  </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Sub Caste</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="sub_caste" [(ngModel)]="user.sub_caste" #sub_caste="ngModel">
+                                        <option value="">Select Sub Caste</option>
+                                        <option *ngFor="let subcaste of subcastes" [ngValue]="subcaste.id">
+                                          {{subcaste.subcaste}}
+                                        </option>
+                                      </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Marital Status</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="marital_status" [(ngModel)]="user.marital_status" #marital_status="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let marital_status of marital_statuses" value="{{marital_status}}">{{marital_status}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Mother Tongue</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="mother_tongue" [(ngModel)]="user.mother_tongue" #mother_tongue="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let language of languages" value="{{language}}">{{language}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Raasi</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="raasi" [(ngModel)]="user.raasi" #raasi="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let raasi of raasis" value="{{raasi}}">{{raasi}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Natchathiram</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="natchathiram" [(ngModel)]="user.natchathiram" #natchathiram="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let star of stars" value="{{star}}">{{star}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Paadham</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="paadham" [(ngModel)]="user.paadham" #paadham="ngModel">
+                              <option value="">Select</option>
+                              <option value="1st Padham">1st Padham</option>
+                              <option value="2nd Padham">2nd Padham</option>
+                              <option value="3rd Padham">3rd Padham</option>
+                              <option value="4th Padham">4th Padham</option>
+                             </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Dosham</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="dosham" [(ngModel)]="user.dosham" #dosham="ngModel">
+                              <option value="">Select</option>
+                              <option *ngFor="let dosham of doshams" value="{{dosham}}">{{dosham}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="sub-title">Education Detail</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Education</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="education" [(ngModel)]="user.education" #education="ngModel">
+                                  <option value="">Select</option>
+                                  <option *ngFor="let education of educations" value="{{education}}">{{education}}</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Profession</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="profession" [(ngModel)]="user.profession" #profession="ngModel">
+                                      <option value="">Select</option>
+                                      <option *ngFor="let occupation of occupations" value="{{occupation}}">{{occupation}}</option>
+                                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Any Disability</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="any_disability" [(ngModel)]="user.any_disability" #any_disability="ngModel">
+                                          <option value="">Select</option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="sub-title">Location Detail</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Nationality</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="nationality" [(ngModel)]="user.nationality" #nationality="ngModel">
+                                      <option value="">Select</option>
+                                      <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+                                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Residing Country</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="country" [(ngModel)]="user.country" #country="ngModel">
+                                          <option value="">Select</option>
+                                          <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+                                        </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Preferred Cities</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="preferred_cities" [(ngModel)]="user.preferred_cities" #preferred_cities="ngModel">
+                                              <option value="">Select</option>
+                                            </select>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="form-group row">
+                    <div class="offset-5 col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="caste" [(ngModel)]="user.caste" #caste="ngModel">
+                                                  <option value="">Select</option>
+                                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="offset-5 col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <input type="number" placeholder="Pincode" class="form-control" [(ngModel)]="user.pincode" name="pincode" #pincode="ngModel">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-5 col" style="text-align: right">
+                        <div>
+                            <button color="accent" style="border-radius:18px;width: 100px;font-family: unset;" type="submit" mat-raised-button>Add</button>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Preferred Cities 2</label>
+                    </div>
+                    <div class="col">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="caste" [(ngModel)]="user.caste" #caste="ngModel">
+                                              <option value="">Select</option>
+                                            </select>
+                        </div>
+                    </div>
+                </div><br> -->
+                <div class="row">
+                    <div class="col-12" style="text-align:center">
+                        <button color="accent" style="border-radius:18px;width: 200px;font-family: unset;" type="submit" mat-raised-button>Submit</button>
+                    </div>
+                </div><br><br>
+            </form>
+        </div>
+    </div>
+</div>

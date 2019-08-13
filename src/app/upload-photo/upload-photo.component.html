@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="header">
+    <img class="logo" src="../../assets/images/logo.png">
+  </div>
+  <div class="content card">
+    <h4 class="title">Upload Photo</h4>
+    <h4 class="title blue-title">WELCOME MR/MISS XXXX</h4>
+    
+    <form (ngSubmit)="uploadFile(uploadForm)" #uploadForm="ngForm">
+      <div class="form-group">
+        <div class="inputWrapper">
+          <input type="file" class="form-control fileInput" 
+          (change)="upload($event)" 
+          [(ngModel)]="profile_img" name="profileImg"
+          #profileImg="ngModel"
+          accept="image/x-png,image/jpeg" />
+          <img *ngIf="url" [src]="url" class="profile-img">
+        </div>
+      </div>
+    <span class="error-msg" *ngIf="showError">{{errorMsg}}</span>
+
+    <button class="btn later">Will do it later</button>
+    <div class="title sub-title">Get more responses by adding your photos</div>
+    <div class="instruction">You can increase your profile visibility by adding more photographs. You can add maximum 20 photographs in your profile and you can't update same image twice. Share photographs of self, family and friends to let the world know about you</div>
+    <button type="submit" class="btn form-control next">Next</button>
+    
+    <div class="do-and-donts">
+      <div class="do">
+        <label>Dont's</label>
+        <ul>
+          <li>Cropped photos</li>
+          <li>Side face images</li>
+          <li>With Sunglasses</li>
+          <li>Too many group photos</li>
+          <li>Blur/Dark/Hazy photos</li>
+          <li>Childhood photos</li>
+        </ul>
+      </div>
+      <div class="donts">
+          <label>Do's</label>
+          <ul>
+            <li>Upload with high resolution</li>
+            <li>Upload your recent photos</li>
+            <li>Upload some awesome solo photos</li>
+            <li>Add photos of family and friends</li>
+          </ul>
+        </div>
+    </div>
+    </form> 
+   
+   </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="form-container">
+    <div class="header">
+      <h3>Update Family Details</h3>
+      <img class="progressbar" src="../../../assets/images/progress-bar-60.png">
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+
+      <div class="form-group">
+        <label class="label" for="father_name">Father Name</label>
+        <input type="text" class="form-control" id="father_name" [(ngModel)]="fatherNameText" minlength="4" name="father_name" #father_name="ngModel" required>
+      
+        <div *ngIf="updateClicked && father_name.invalid && (father_name.dirty || father_name.touched)" class="alert alert-danger">
+          <div *ngIf="father_name.errors.minlength">
+            Father Name must be atleast 4 characters long.
+          </div>
+          <div *ngIf="office_details.errors.required">
+            Father Name is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="father_name">Father Occupation</label>
+        <input type="text" class="form-control" id="father_occupation" [(ngModel)]="fatherOccupationText" name="father_occupation" #father_occupation="ngModel" required>
+      
+        <div *ngIf="updateClicked && father_occupation.invalid && (father_occupation.dirty || father_occupation.touched)" class="alert alert-danger">
+          <div *ngIf="father_occupation.errors.minlength">
+            Father Occupation must be atleast 4 characters long.
+          </div>
+          <div *ngIf="father_occupation.errors.required">
+            Father Occupation is required.
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="mother_name">Mother Name</label>
+        <input type="text" class="form-control" id="mother_name" [(ngModel)]="motherNameText" name="mother_name" #mother_name="ngModel" required>
+      
+        <div *ngIf="updateClicked && mother_name.invalid && (mother_name.dirty || mother_name.touched)" class="alert alert-danger">
+          <div *ngIf="mother_name.errors.minlength">
+            Mother Name must be atleast 4 characters long.
+          </div>
+          <div *ngIf="mother_name.errors.required">
+            Mother Name is required.
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label class="label" for="mother_occupation">Mother Occupation</label>
+        <input type="text" class="form-control" id="mother_occupation" [(ngModel)]="motherOccupationText" name="mother_occupation" #mother_occupation="ngModel" required>
+      
+        <div *ngIf="updateClicked && mother_occupation.invalid && (mother_occupation.dirty || mother_occupation.touched)" class="alert alert-danger">
+          <div *ngIf="mother_occupation.errors.minlength">
+            Mother Occupation must be atleast 4 characters long.
+          </div>
+          <div *ngIf="mother_name.errors.required">
+            Mother Occupation is required.
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="form-group">
+        <label class="label" for="no_of_siblings">No. of Siblings</label>
+        <input type="number" class="form-control" id="no_of_siblings" [(ngModel)]="noOfSiblingsText" name="no_of_siblings" #no_of_siblings="ngModel" required>
+      
+        <div *ngIf="updateClicked && no_of_siblings.invalid && (no_of_siblings.dirty || no_of_siblings.touched)" class="alert alert-danger">
+          <div *ngIf="no_of_siblings.errors.required">
+            No. of Siblings is required.
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="family_type">Select your Family Type</label>
+          <select name="family_type" id="family_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let family_type of family_types" [ngValue]="family_type">{{family_type}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.family_type?.length===0" class="alert alert-danger">
+            Family Type is required.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="family_status">Select your Family Status</label>
+          <select name="family_status" id="family_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let family_status of family_statuses" [ngValue]="family_status">{{family_status}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.family_status?.length===0" class="alert alert-danger">
+            Family Status is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="about_family">About Family</label>
+        <textarea class="form-control" id="about_family" [(ngModel)]="aboutFamily" minlength="20" name="about_family" #about_family="ngModel" required></textarea>
+      
+        <div *ngIf="updateClicked && about_family.invalid && (about_family.dirty || about_family.touched)" class="alert alert-danger">
+          <div *ngIf="about_family.errors.minlength">
+            About Family must be atleast 20 characters long.
+          </div>
+          <div *ngIf="about_family.errors.required">
+            About Family is required.
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div>

@@ -1,0 +1,71 @@
+<div style="display: flex !important;">
+    <div class="view-layout">{{matchName$ | async}} MATCHES</div>
+    <div class="view-type">
+      <button mat-icon-button>
+        <mat-icon data-view="grid"
+          [ngClass]="{'enable-view' : (gridView$ | async), 'disable-view' : !(gridView$ | async)}">view_comfy</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon data-view="list"
+          [ngClass]="{'enable-view' : (listView$ | async), 'disable-view' : !(listView$ | async)}">list</mat-icon>
+      </button>
+      Sort By: <mat-select>
+        <mat-option>Last Login</mat-option>
+        <mat-option>Profile</mat-option>
+        <mat-option>Recently Created</mat-option>
+        <mat-option>Latest Option</mat-option>
+  
+      </mat-select>
+    </div>
+  </div>
+  <div class="grid-container" *ngIf="(gridView$ | async)">
+    <div class="flex-container">
+      <mat-card class="mat-flex" *ngFor="let item of (matchesInput$ | async); let i = index;">
+        <mat-card-title>
+          <span>
+            <img class="match-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+              alt="Photo of a Shiba Inu">
+          </span>
+          <div>{{(i + 1)}}</div>
+          <div>NM-7683746</div>
+          <div>20, Never Married</div>
+          <div>Chennai, Tamilnadu</div>
+          <div>
+            <app-card-footer-icon></app-card-footer-icon>
+          </div>
+        </mat-card-title>
+      </mat-card>
+    </div>
+  
+    <div class="pagination-footer">
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="pageEvent = OnPageChange($event)">
+      </mat-paginator>
+      <!-- <div>Next</div> -->
+    </div>
+  </div>
+  
+  <div class="list-container" *ngIf="(listView$ | async)">
+    <div class="flex-container">
+      <mat-card class="mat-flex-list" *ngFor="let item of (matchesInput$ | async); let i = index;">
+        <mat-card-title>
+          <span>
+            <img class="match-image-list" src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+              alt="Photo of a Shiba Inu">
+          </span>
+          <div class="list-match-details">
+            <div>{{(i + 1)}}</div>
+            <div>NM-7683746</div>
+            <div>20, Never Married</div>
+            <div>Chennai, Tamilnadu</div>
+          </div>
+        </mat-card-title>
+      </mat-card>
+    </div>
+    <div class="pagination-footer">
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptionsList"
+        (page)="pageEvent = OnPageChange($event)">
+      </mat-paginator>
+      <!-- <div>Next</div> -->
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+.verification {
+    font-family: Futura Book Regular;
+    .title {
+        font-size: 36px;
+        text-align: center;
+        color: #ff4081;
+        font-family: OptimusPrinceps;
+        width: 100%;
+    }
+    .sub-title {
+        font-size: 24px;
+        color: #1F5D76;
+        width: 100%;
+    }
+    .form-control {
+        border-radius: 0px !important;
+        border: 0.5px solid gray;
+    }
+    /deep/ .row {
+        margin: 0px;
+    }
+}

@@ -1,0 +1,58 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+    background: url('../../../../assets/images/bgstories.png');
+    .header {
+        color: #1F5D76;
+        font-weight: 700;
+        font-size: 20px;
+        //  text-shadow: 1px 1px gray;
+    }
+    swiper {
+        margin-top: 30px;
+        .swiper-slide {
+            width: 20%;
+            margin-right: 0px !important;
+            .card {
+                margin: 20px;
+                .card-body {
+                    padding: 5px;
+                    padding-bottom: 15px;
+                    .card-title {
+                        font-size: 14px;
+                    }
+                    .card-text {
+                        font-size: 12px;
+                    }
+                }
+                .square {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 100%;
+                    .card-img-top {
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        text-align: center;
+                    }
+                }
+                .card-text {
+                    margin: 0;
+                    line-height: 1.4;
+                }
+                .btn-primary {
+                    background: #9c1d32;
+                    border: 0;
+                    font-size: 14px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

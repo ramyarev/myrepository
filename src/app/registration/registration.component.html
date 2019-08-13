@@ -1,0 +1,146 @@
+<div class="container">
+  <div class="form-container">
+    <div class="header">
+      <h3>Few More Steps!</h3>
+      <p>To Search your Partner</p>
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+        <label class="header">Please enter your details</label>
+
+        <div class="form-group">
+          <label class="label" for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" minlength="4" [(ngModel)]="firstNameText" name="firstName" #firstName="ngModel" required>
+        
+          <div *ngIf="updateClicked && firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">
+              First Name is required.
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+              First Name must be atleast 4 charcaters long.
+            </div>
+          </div>  
+        </div>
+
+         <div class="form-group">
+          <label class="label" for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" minlength="1" [(ngModel)]="lastNameText" name="lastName" #lastName="ngModel" required>
+        
+          <div *ngIf="updateClicked && lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+            <div *ngIf="lastName.errors.required">
+              Last Name is required.
+            </div>
+            <div *ngIf="lastName.errors.minlength">
+              Last Name must be atleast 1 charcaters long.
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="gender">Gender</label>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn gender male">Male</button>
+                <button type="button" class="btn gender female">Female</button>
+            </div>
+            <div *ngIf="updateClicked && gender.invalid" class="alert alert-danger">
+                Gender is required.
+            </div> 
+        </div>
+         
+        <div class="form-group">
+          <label class="label" for="dob">DOB</label>
+          <input type="text" placeholder="Datepicker" class="form-control" [(ngModel)]="dobText" name="dob" #dob="ngModel" bsDatepicker required>
+          
+          <div *ngIf="updateClicked && dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+            DOB is required.
+          </div>
+        </div>
+        
+
+      <div class="form-group">
+          <label class="label" for="religion">Religion</label>
+          <select name="religion" id="religion" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.religion?.length===0" class="alert alert-danger">
+            Religion is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="natinality">Country</label>
+          <select name="nationality" id="nationality" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.nationality?.length===0" class="alert alert-danger">
+              Country is required.
+          </div>
+
+      </div>
+      
+      <div class="form-group">
+          <label class="label" for="state">State</label>
+          <select name="state" id="state" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.state?.length===0" class="alert alert-danger">
+            State is required.
+          </div>
+
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="city">City</label>
+          <select name="city" id="city" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.city?.length===0" class="alert alert-danger">
+            State is required.
+          </div>
+
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="caste">Caste</label>
+          <select name="caste" id="caste" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let caste of castes" [ngValue]="caste">{{caste}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.caste?.length===0" class="alert alert-danger">
+            Caste is required.
+          </div>
+      </div>
+
+       <div class="form-group">
+          <label class="label" for="caste">Sub Caste</label>
+          <select name="caste" id="caste" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let caste of castes" [ngValue]="caste">{{caste}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.caste?.length===0" class="alert alert-danger">
+            Caste is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="checkbox">
+            <label class="terms-accept">
+              <input type="checkbox" class="cbx-accept vertical-center" value="">
+              <div class="vertical-center">By submitting, you agree to our privacy policy and T&C</div>
+            </label>
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div>

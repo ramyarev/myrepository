@@ -1,0 +1,73 @@
+<!-- <div class="modal-content card">
+    <div class="modal-header"> -->
+<div class="login">
+    <div class="login-header">
+        <div><img class="logo" src="../../assets/images/logo.png"></div>
+        <div class="slogan">It's really simply and highly secured</div>
+        <div class="title">LOGIN WITH YOUR E-MAIL</div>
+
+        <!-- <button type="button" id="btnLoginClose" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button> -->
+        <button type="button" class="close" aria-label="Close" (click)="onClose()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+    </div>
+    <!-- <h5 class="modal-title" id="exampleModalLongTitle">Login with your Email</h5> -->
+
+    <!-- </div> -->
+    <!-- <div class="modal-body"> -->
+    <form (ngSubmit)="login(loginForm)" #loginForm="ngForm" class="inner">
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" placeholder="Enter Your Email Address" class="form-control" id="loginEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="loginEmailText" name="loginEmail" #loginEmail="ngModel" required>
+
+            <div *ngIf="loginClicked && loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)" class="alert alert-danger">
+                <div *ngIf="loginEmail.errors.required">
+                    Email ID is required.
+                </div>
+                <div *ngIf="loginEmail.errors.pattern">
+                    Enter a valid Email ID
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Create a Password" class="form-control" id="loginPassword" minlength="6" [(ngModel)]="loginPasswordText" name="loginPassword" #loginPassword="ngModel" required>
+
+            <div *ngIf="loginClicked && loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)" class="alert alert-danger">
+                <div *ngIf="loginPassword.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="loginPassword.errors.minlength">
+                    Password must be 6 characters long.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group stay-signed">
+            <input type="checkbox" id="stay-signed" name="stay-signed" ngModel>
+            <span class="vertical-center">Stay Signed in</span><br>
+            <span class="forget-password vertical-center">Forget Password?</span>
+        </div>
+
+        <span class="error-msg" *ngIf="showError">{{errorMsg}}</span>
+
+        <div class="">
+            <button type="submit" mat-raised-button color="accent" style="border-radius: 18px;">Login</button>
+            <div class="login-option">
+                <span>New to NammaMatrimony.com?</span><br>
+                <!-- <span class="login-btn"></span> -->
+                <a mat-button style="font-family:unset" (click)="onRegister()" color="accent">Register for Free</a>
+
+            </div>
+        </div>
+    </form>
+    <!-- </div> -->
+    <!-- </div> -->
+</div>

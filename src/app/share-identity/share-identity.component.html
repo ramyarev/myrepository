@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="header">
+      <img class="logo" src="../../assets/images/logo.png">
+    </div>
+    <div class="content card vertical-center">
+      <h4 class="title">Share your Identity</h4>
+      <span class="code-instruction">Authentic genuine profile receives maximum responses.Upload your Id document to confirm your identity</span>
+      <h4 class="title left-title">Upload ID Document:</h4>
+      <span class="code-instruction">You may choose to upload Aadhar, PAN Card, Passport or Driving Licence/any other identification document</span>
+      
+      <div class="btn-group doc-group">
+          <label class="btn doc-type" class="form-control" [(ngModel)]="aadharText" name="aadhar" #aadhar="ngModel" [(ngModel)]="docType.aadhar" ngDefaultControl btnCheckbox tabindex="0" role="button">AADHAR</label>
+          <label class="btn doc-type" [(ngModel)]="docType.pancard" ngDefaultControl btnCheckbox tabindex="1" role="button">PAN CARD</label>
+          <label class="btn doc-type" [(ngModel)]="docType.passport" ngDefaultControl btnCheckbox tabindex="2" role="button">PASSPORT</label>
+          <label class="btn doc-type" [(ngModel)]="docType.licence" ngDefaultControl btnCheckbox tabindex="3" role="button">LICENCE</label>
+      </div>
+
+      <form (ngSubmit)="uploadFile(loginForm)" #loginForm="ngForm">
+        <div>
+        <div class="form-group otp-text">
+            <input type="file" class="form-control" 
+            (change)="upload($event.target.files)" 
+            [(ngModel)]="signupEmailText" name="signupEmail" #signupEmail="ngModel" />
+            <div class="overlay">
+              <span *ngIf="isFileChosen">{{files[0]?.name}}</span>
+            </div>
+        </div>
+  
+        <div class="form-group otp-btn">
+          <button type="button" class="btn submit">
+              Upload
+        </button> 
+        </div>
+        
+    
+      </div>
+      <span class="error-msg" *ngIf="showError">{{errorMsg}}</span>
+
+      <button class="btn later">Will do it later</button>
+      <button type="submit" class="btn form-control next">Next</button>
+      </form> 
+     
+     </div>
+  </div>

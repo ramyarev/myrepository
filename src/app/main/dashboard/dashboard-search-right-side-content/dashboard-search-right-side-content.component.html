@@ -1,0 +1,42 @@
+<div class="search-container">
+  <mat-form-field class="searchForm">
+    <p class="title">SEARCH</p>
+    <input matInput class="searchField" type="text" placeholder="Search by ID">
+    <p class="title">OR</p>
+    <div class="field-label">Age</div>
+    <div class="age-flex">
+      <input matInput class="age" type="number" placeholder="20">
+      to
+      <input matInput class="age" type="number" placeholder="20">
+    </div>
+
+    <div class="field-label">Religion</div>
+    <div>
+      <mat-select [(ngModel)]="selectedReligion" name="religion">
+        <mat-option value="hindu1">Hindu1</mat-option>
+        <mat-option value="hindu2">Hindu2</mat-option>
+        <mat-option value="hindu3">Hindu3</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="field-label">Mother Tongue</div>
+    <div>
+      <mat-select [(ngModel)]="selectedMotherTongue" name="motherTongue">
+        <mat-option value="tamil1">Tamil1</mat-option>
+        <mat-option value="tamil2">Tamil2</mat-option>
+        <mat-option value="tamil3">Tamil3</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="field-label">Caste</div>
+    <div>
+      <mat-select [(ngModel)]="selectedCaste" name="caste">
+        <mat-option value="caste1">Caste1</mat-option>
+        <mat-option value="caste2">Caste2</mat-option>
+        <mat-option value="caste3">Caste3</mat-option>
+      </mat-select>
+    </div>
+
+    <button mat-button class="search">Search</button>
+  </mat-form-field>
+</div>

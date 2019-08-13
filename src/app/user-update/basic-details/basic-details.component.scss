@@ -1,0 +1,141 @@
+.container {
+    overflow: hidden;
+    min-height: 100%;
+    padding: 0;
+    min-width: 100%;
+    background: url('../../../assets/images/bgstories.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .form-container {
+        min-height: 100%;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background: white;
+        overflow: hidden; 
+        
+        .header {
+            color: #de3c93;
+            margin-top: 30px;
+            text-align: center;
+
+            .progressbar {
+                width: 80%;
+                margin: 0 auto;
+                height: 30px;
+            }
+        }
+        form {
+            padding: 30px;
+            margin: 0;
+            width: 100%;
+            .form-group {
+                overflow: hidden;
+                padding: 10px;
+                
+                .form-control, label {
+                    width: 50%;
+                    float: left;
+                    
+                    &.height {
+                        width: 100px;
+                        float: left;
+                        margin-right: 30px;
+                    }
+                }
+                .label {
+                 vertical-align: middle;
+                 height: 100%;
+                }
+                .radio-inline {
+                    width: auto;
+                    margin-right: 30px;
+                }
+                &.dropdown-height {
+                    overflow: visible;
+                }
+                .alert {
+                    background: transparent;
+                    border: none;
+                    float: right;
+                    width: 50%;
+                    padding: 5px;
+                    margin: 0px;
+                }
+                .alert-danger {
+                    color: red;
+                    font-size: 12px;
+                }
+
+                .btn-group {
+                    width: 50%;
+
+                    .btn-group-item {
+                        width: 33.33%;
+                        margin-right: 5%;
+                        background: white;
+                        border:1px solid #ced4da;
+                        border-radius: 5px;
+
+                        &.slim {
+                            background: url('../../../assets/images/slim.png');
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                            background-position: 10px 10px;
+                            text-align: left;
+                            padding-left: 40px;
+                        }
+                        &.fit {
+                            background: url('../../../assets/images/fit.png');
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                            background-position: 10px 10px;
+                            text-align: left;
+                            padding-left: 40px;
+                        }
+                        &.fat {
+                            background: url('../../../assets/images/fat.png');
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                            background-position: 10px 10px;
+                            text-align: left;
+                            padding-left: 40px;
+                        }
+                        &.dark {
+                           color :white;
+                           background: #8D5524;
+                        }
+                        &.tan {
+                            color: black;
+                            background: #E0AC69;
+                        }
+                        &.fair {
+                            color: black;
+                            background: #FFDBAC;
+                        }
+                    }
+                }
+            }
+            select {
+                width: 50%;
+                height: 37px;
+            }
+            .submit {
+                margin: 0 auto;
+                display: block;
+                background: #de3c93;
+                width: 30%;
+                font-size: 16px;
+                border: none;
+                color: white;
+            }
+            .header {
+                margin-left: 10px;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    }
+}

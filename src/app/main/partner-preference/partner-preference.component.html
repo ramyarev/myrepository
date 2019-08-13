@@ -1,0 +1,184 @@
+<div class="container">
+  <div class="form-container card">
+    <div class="header">
+      <h3>Partner Preference</h3>
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+        <label class="header">Please enter your details</label>
+
+        <div class="form-group">
+          <label class="label" for="age">Age</label>
+          <select name="age" id="feet" class="form-control height" ngModel>
+              <option value="" disabled>0</option>
+              <option *ngFor="let feet of feets" [ngValue]="feet">{{feet}}</option>
+          </select>
+          <select name="inch" id="inch" class="form-control height" ngModel>
+              <option value="" disabled>0</option>
+              <option *ngFor="let inch of inches" [ngValue]="inch">{{inch}}</option>
+          </select>
+          </div>
+
+        <div class="form-group">
+        <label class="label" for="height">Height</label>
+        <select name="feet" id="feet" class="form-control height" ngModel>
+            <option value="" disabled>0</option>
+            <option *ngFor="let feet of feets" [ngValue]="feet">{{feet}}</option>
+        </select>
+        <select name="inch" id="inch" class="form-control height" ngModel>
+            <option value="" disabled>0</option>
+            <option *ngFor="let inch of inches" [ngValue]="inch">{{inch}}</option>
+        </select>
+        </div>
+  
+    
+        <div class="form-group">
+          <label class="label" for="weight">Weight</label>
+          <select name="kg" id="kg" class="form-control height" ngModel>
+            <option value="" disabled>0</option>
+            <option *ngFor="let kg of kgs" [ngValue]="kg">{{kg}}</option>
+        </select>
+        <select name="inch" id="inch" class="form-control height" ngModel>
+            <option value="" disabled>0</option>
+            <option *ngFor="let gm of gms" [ngValue]="gm">{{gm}}</option>
+        </select>
+        </div>
+
+      <div class="form-group">
+          <label class="label" for="religion">Select your Religion</label>
+          <select name="religion" id="religion" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="caste">Select your Caste</label>
+        <select name="caste" id="caste" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let caste of castes" [ngValue]="caste">{{caste}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="sub_caste">Sub Caste</label>
+      <input type="text" class="form-control" id="sub_caste" [(ngModel)]="subCasteText" name="sub_caste" #sub_caste="ngModel" required>
+    </div>
+      
+       
+      <div class="form-group">
+          <label class="label" for="home_country">Country Residence</label>
+          <select name="home_country" id="home_country" ngModel>
+              <option value="" disabled>Select any one</option>
+              <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="home_state">State Residence</label>
+          <select name="home_state" id="home_state" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="raasi">Raasi</label>
+          <select name="raasi" id="raasi" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let raasi of raasis" value="raasi">{{raasi}}</option>
+          </select>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="star">Star</label>
+          <select name="star" id="star" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let star of stars" value="star">{{star}}</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="marital_status">Marital Status</label>
+          <select name="marital_status" id="marital_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+          </select>
+      </div>
+
+    <div class="form-group">
+        <label class="label" for="mother_tongue">Mother Tongue</label>
+        <select name="mother_tongue" id="mother_tongue" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let language of languages" value="language">{{language}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="paadham">Paadham</label>
+        <select name="paadham" id="paadham" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+        </select>
+    </div>
+
+    <label>Education Detail</label>
+
+    <div class="form-group">
+      <label class="label" for="education">Education</label>
+      <select name="education" id="education" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="profession">Profession</label>
+      <select name="profession" id="profession" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="profession">Any Disability</label>
+      <select name="disability" id="disability" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+    </div>
+
+    <label>Location Detail</label>
+
+    <div class="form-group">
+      <label class="label" for="nationality">Nationality</label>
+      <select name="nationality" id="nationality" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="living_country">Residing Country</label>
+      <select name="living_country" id="residency" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="living_country">Preferred Cities</label>
+      <div class="preferred_cities">
+      <select class="form-control" *ngFor="let city of preferred_cities;index as i" name="living_country_{{i}}" id="residency_{{i}}" ngModel>
+        <option value="" disabled>Select</option>
+        <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+      </select>
+      <button class="btn" (click)="addPreferredCity(i)">Add</button>
+     </div>
+    </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div>

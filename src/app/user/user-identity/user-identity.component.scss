@@ -1,0 +1,34 @@
+.upload {
+    font-family: Futura Book Regular !important;
+    .title {
+        font-size: 36px;
+        text-align: center;
+        color: #ff4081;
+        font-family: OptimusPrinceps;
+        width: 100%;
+    }
+    .subtitle {
+        font-size: 20px;
+        color: #1d5d77;
+    }
+    /deep/ .mat-tab-label-active {
+        opacity: 1 !important;
+    }
+    .form-control {
+        border-radius: 0px !important;
+        border: 0.5px solid gray;
+    }
+    /deep/ [type="file"] {
+        padding: 4px;
+        white-space: nowrap;
+        height: 39px;
+    }
+    /deep/ .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    /deep/ .col-12 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

@@ -1,0 +1,143 @@
+<div class="basic">
+    <div class="row" style="width:100%">
+        <div class="offset-sm-2 col-sm-8 col-12">
+            <div class="col-12 title">
+                Family backgrounD
+            </div>
+            <div class="col-12">
+                <img class="img-fluid" src="../../assets/images/family_status.png" alt="status" />
+            </div>
+            <br>
+            <form (ngSubmit)="familyDetails()" #basicForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Father's Name</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" placeholder="Enter Your Father's Name" class="form-control" [(ngModel)]="user.father_name" name="father_name" #father_name="ngModel" required>
+                    </div>
+                    <div *ngIf="father_name.invalid && (father_name.dirty || father_name.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="father_name.errors.required">
+                            Father's Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Mother's Name</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" placeholder="Enter Your Mother's name" class="form-control" [(ngModel)]="user.mother_name" name="mother_name" #mother_name="ngModel" required>
+                    </div>
+                    <div *ngIf="mother_name.invalid && (mother_name.dirty || mother_name.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="mother_name.errors.required">
+                            Mother's Name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Father's Occupation</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="father_occupation" [(ngModel)]="user.father_occupation" #father_occupation="ngModel" required>
+                                        <option value="">Select father's occupation</option>
+                                        <option *ngFor="let occupation of occupations" [ngValue]="occupation">
+                                                {{occupation}}
+                                              </option>
+                                          </select>
+                        </div>
+                    </div>
+                    <div *ngIf="father_occupation.invalid && (father_occupation.dirty || father_occupation.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="father_occupation.errors.required">
+                            Father's Occupation is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Mother's Occupation</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="mother_occupation" [(ngModel)]="user.mother_occupation" #mother_occupation="ngModel" required>
+                                        <option value="">Select Mother's Occupation</option>
+                                        <option *ngFor="let occupation of occupations" [ngValue]="occupation">
+                                                {{occupation}}
+                                              </option>
+                                          </select>
+                        </div>
+                    </div>
+                    <div *ngIf="mother_occupation.invalid && (mother_occupation.dirty || mother_occupation.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="mother_occupation.errors.required">
+                            Mother's Occupation is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">No. of Siblings</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="no_of_siblings" [(ngModel)]="user.no_of_siblings" #no_of_siblings="ngModel" required>
+                                        <option value="">Select No. of Siblings</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5</option>
+                                        <option value="3">6</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="no_of_siblings.invalid && (no_of_siblings.dirty || no_of_siblings.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="no_of_siblings.errors.required">
+                            No. of Siblings details are required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">Family Status</label>
+                    </div>
+                    <div class="col-7">
+                        <div style="border-radius: 0px !important;border: 0.5px solid gray;height:35px">
+                            <select name="family_status" [(ngModel)]="user.family_status" #family_status="ngModel" required>
+                                        <option value="">Select Family Status</option>
+                                        <option value="Poor">Poor</option>
+                                        <option value="Middle class">Middle class</option>
+                                        <option value="Upper middle class">Upper middle class</option>
+                                        <option value="Rich">Rich</option>
+                                        <option value="Very Rich">Very Rich</option>
+                                      </select>
+                        </div>
+                    </div>
+                    <div *ngIf="family_status.invalid && (family_status.dirty || family_status.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="family_status.errors.required">
+                            Family Status details are required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-5">
+                        <label style="margin-top: 10px">About your Family</label>
+                    </div>
+                    <div class="col-7">
+                        <textarea type="text" placeholder="Write about your Family" class="form-control" [(ngModel)]="user.about_family" name="about_family" #about_family="ngModel" required></textarea>
+                    </div>
+                    <div *ngIf="about_family.invalid && (about_family.dirty || about_family.touched)" class="col">
+                        <div class="alert alert-danger" *ngIf="about_family.errors.required">
+                            Should right few words about your family.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 5px;text-align: center;">
+                    <button color="accent" style="border-radius:18px;font-family: unset;width:150px" type="submit" [disabled]="basicForm.form.invalid" mat-raised-button>Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

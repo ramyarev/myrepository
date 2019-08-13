@@ -1,0 +1,207 @@
+<div class="container">
+  <div class="form-container">
+    <div class="header">
+      <h3>Update Basic Details</h3>
+      <img class="progressbar" src="../../../assets/images/progress-bar-20.png">
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+        <label class="header">Please enter your details</label>
+
+        <div class="form-group">
+          <label class="label" for="about_myself">About Myself</label>
+          <textarea class="form-control" id="about_myself" [(ngModel)]="aboutMyself" minlength="20" name="about_myself" #about_myself="ngModel" required></textarea>
+        
+          <div *ngIf="updateClicked && about_myself.invalid && (about_myself.dirty || about_myself.touched)" class="alert alert-danger">
+            <div *ngIf="about_myself.errors.minlength">
+              About youself must be atleast 20 characters long.
+            </div>
+            <div *ngIf="about_myself.errors.required">
+              About youself is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label" for="height">Height</label>
+          <input type="number" class="form-control height" id="feet" [(ngModel)]="feetText" name="feet" #feet="ngModel" required>
+          <input type="number" class="form-control height" id="inches" [(ngModel)]="inchesText" name="inches" #inches="ngModel" required>
+        
+          <div *ngIf="updateClicked && feet.invalid && (feet.dirty || feet.touched)" class="alert alert-danger">
+            <div *ngIf="feet.errors.required">
+              Feet is required.
+            </div>
+          </div>
+        </div>
+  
+    
+        <div class="form-group">
+          <label class="label" for="height">Weight</label>
+          <input type="number" class="form-control height" id="kg" [(ngModel)]="kgText" name="kg" #kg="ngModel" required>
+          <input type="number" class="form-control height" id="gms" [(ngModel)]="gmsText" name="gms" #gms="ngModel" required>
+        
+          <div *ngIf="updateClicked && kg.invalid && (kg.dirty || kg.touched)" class="alert alert-danger">
+            <div *ngIf="kg.errors.required">
+              Weight is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label" for="body_type">Body Type</label>
+          <div class="btn-group" role="group">
+              <button type="button" class="btn btn-group-item slim">Slim</button>
+              <button type="button" class="btn btn-group-item fit">Fit</button>
+              <button type="button" class="btn btn-group-item fat">Fat</button>
+          </div>
+          <div *ngIf="updateClicked && body_type.invalid" class="alert alert-danger">
+              Gender is required.
+          </div> 
+      </div>
+
+    
+      <div class="form-group">
+        <label class="label" for="complexion">Complexion</label>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-group-item dark">Dark</button>
+            <button type="button" class="btn btn-group-item tan">Tan</button>
+            <button type="button" class="btn btn-group-item fair">Fair</button>
+        </div>
+        <div *ngIf="updateClicked && complexion.invalid" class="alert alert-danger">
+            Gender is required.
+        </div> 
+    </div>
+
+        
+      <div class="form-group">
+        <label class="label" for="physical_status">Physical Status</label>
+        <div>
+            <label class="radio-inline"> <input type="radio" name="physical_status" value="yes" [(ngModel)]="physicalStatusText" #physical_status="ngModel" required checked> Yes </label>
+            <label class="radio-inline"> <input type="radio" name="physical_status" value="no" [(ngModel)]="physicalStatusText" #physical_status="ngModel" required> No </label>
+        </div>
+        <div *ngIf="updateClicked && physical_status.invalid" class="alert alert-danger">
+          Please mention whether your physical status.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="smoking_habits">Smoking Habits?</label>
+        <div>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="yes" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required checked> Yes </label>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="no" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required> No </label>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="later" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required> Later </label>
+        </div>
+        <div *ngIf="updateClicked && smoking_habits.invalid" class="alert alert-danger">
+          Information about Smoking Habits is required.
+        </div> 
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="drinking_habits">Drinking Habits?</label>
+        <div>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="yes" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required checked> Yes </label>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="no" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required> No </label>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="later" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required> Later </label>
+        </div>
+        <div *ngIf="updateClicked && drinking_habits.invalid" class="alert alert-danger">
+          Information about Drinking Habits is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="eating_habits">Eating Habits?</label>
+        <select name="eating_habits" id="eating_habits" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+        </select>
+        <div *ngIf="updateClicked && eating_habits.invalid" class="alert alert-danger">
+          Information about Eating Habits is required.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="marital_status">Marital Status</label>
+          <select name="marital_status" id="marital_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.marital_status?.length===0" class="alert alert-danger">
+            Your marital status is mandatory.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="no_of_children">No. of Children</label>
+        <input type="number" class="form-control" id="no_of_children" [(ngModel)]="noOfChildrenText" name="no_of_children" #no_of_children="ngModel" required>
+        <div *ngIf="updateClicked && no_of_children.invalid && (no_of_children.dirty || no_of_children.touched)" class="alert alert-danger">
+          <div *ngIf="no_of_children.errors.required">
+            No. of Children is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="raasi">Select your Raasi</label>
+        <select name="raasi" id="raasi" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let raasi of raasis" value="raasi">{{raasi}}</option>
+        </select>
+         <div *ngIf="updateClicked && updateForm.value.raasi?.length===0" class="alert alert-danger">
+          Raasi is required.
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="label" for="star">Select your Star</label>
+        <select name="star" id="star" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let star of stars" value="star">{{star}}</option>
+        </select>
+        <div *ngIf="updateClicked && updateForm.value.star?.length === 0" class="alert alert-danger">
+          Star details are required.
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label" for="star">Select your Paadham</label>
+      <select name="star" id="star" ngModel>
+        <option value="" disabled>Select any one</option>
+        <option *ngFor="let star of stars" value="star">{{star}}</option>
+      </select>
+      <div *ngIf="updateClicked && updateForm.value.star?.length === 0" class="alert alert-danger">
+        Star details are required.
+      </div>
+  </div>
+
+
+    <div class="form-group">
+      <label class="label" for="dosham">Having Dosham?</label>
+      <div>
+          <label class="radio-inline"> <input type="radio" name="having_dosham" value="yes"  [(ngModel)]="havingDoshamText" #having_dosham="ngModel" required checked> Yes </label>
+          <label class="radio-inline"> <input type="radio" name="having_dosham" value="no"  [(ngModel)]="havingDoshamText" #having_dosham="ngModel" required> No </label>
+      </div>
+      <div *ngIf="updateClicked && having_dosham.invalid" class="alert alert-danger">
+        Please mention whether you are into dosham or not.
+      </div>
+    </div>
+
+ 
+    <div class="form-group">
+        <label class="label" for="dosham">Dosham Details</label>
+        <select name="dosham" id="dosham" ngModel>
+          <option value="" disabled>Select any one</option>
+          <option *ngFor="let dosham of doshams" value="dosham">{{dosham}}</option>
+        </select>
+        <div *ngIf="updateClicked && updateForm.value.dosham?.length===0" class="alert alert-danger">
+          Dosham details are required.
+        </div>
+    </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div>

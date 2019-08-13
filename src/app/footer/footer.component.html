@@ -1,0 +1,88 @@
+<div class="wrapper">
+    <h3 class="header">Browse Matrimonial Profiles By</h3>
+
+    <div class="shortcut-menu row">
+        <div class="menu-row row">
+            <div class="col" style="word-break:break-all;">
+                <button>Religion</button>
+                <span class="menu-col" *ngFor="let religion of religions">{{religion}}</span>
+            </div>
+        </div>
+        <div class="menu-row row">
+            <div class="col" style="word-break:break-all;">
+                <button>Caste</button>
+                <span class="menu-col" *ngFor="let caste of castes">{{caste}}</span>
+            </div>
+        </div>
+        <div class="menu-row row">
+            <div class="col" style="word-break:break-all;">
+                <button>State</button>
+                <span class="menu-col" *ngFor="let state of states">
+                    <span [innerHTML]="state"></span>
+                </span>
+            </div>
+        </div>
+        <div class="menu-row row">
+            <div class="col" style="word-break:break-all;">
+                <button>Regional</button>
+                <span class="menu-col" *ngFor="let language of languages">{{language}}</span>
+            </div>
+        </div>
+        <div class="menu-row row">
+            <div class="col" style="word-break:break-all;">
+                <button>Country</button>
+                <span class="menu-col" *ngFor="let country of countries">{{country}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer row">
+        <ul class="offset-1 col-2">
+            <span class="title">Company</span>
+            <li>About Us</li>
+            <li>Success Stories</li>
+            <li>Blogs</li>
+            <li>Media & PR</li>
+            <li>Careers</li>
+        </ul>
+
+        <ul class="col-2">
+            <span class="title">Help & Support</span>
+            <li>Live Support</li>
+            <li>Online Help - FAQ</li>
+            <li>Contact us</li>
+            <li>Sitemap</li>
+        </ul>
+
+        <ul class="col-2">
+            <span class="title">Policies</span>
+            <li>Privacy Policy</li>
+            <li>Terms of Use</li>
+            <li>Disclaimer</li>
+            <li>Payment Policy</li>
+        </ul>
+
+        <ul class="col-2">
+            <span class="title">Other Services</span>
+            <li>Namma Matrimony</li>
+            <li>Namma Clicks</li>
+            <li>Namma Carnival</li>
+            <li>Namma Shopify</li>
+            <li>Namma Mandabam</li>
+        </ul>
+
+        <div class="follow col-2">
+            <div class="label">Follow Us</div>
+            <img src="../../assets/images/twitter.png">
+            <img src="../../assets/images/youtube.png">
+            <img src="../../assets/images/facebook.png">
+            <img src="../../assets/images/instagram.png">
+            <!-- <div class="label">App available on</div>
+            <img src="../../assets/images/android.png">
+            <img src="../../assets/images/ios.png"> -->
+        </div>
+
+    </div>
+
+</div>
+<div class="copyright">Copyrights 2018. NammaMatrimony.in. All Rights Reserved</div>

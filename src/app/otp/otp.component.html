@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="header">
+    <img class="logo" src="../../assets/images/logo.png">
+  </div>
+  <div class="content card vertical-center">
+    <div class="otp-request" *ngIf="!otpVerified">
+    <h4 class="title">Please verify your Number</h4>
+    <h4 class="question">Why Verification Necessary?</h4>
+    <div class="image-content">
+      <img src="../../assets/images/mobile_otp.png">
+      <div class="otp-message">By verifying email address and mobile number trust and score will be increased. Profile having good trust score gets more interest from the other users</div>
+    </div>
+    <span class="code-instruction">Please Enter the Verification Code sent to +91 XXXXXXXXXX</span>
+    <form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+             
+      <div>
+      <div class="form-group otp-text">
+        <input type="text" placeholder="Enter OTP" class="form-control" id="otp" [(ngModel)]="otpText" name="otp" #otp="ngModel" required>
+      
+        <div *ngIf="otpClicked && otp.invalid && (otp.dirty || otp.touched)" class="alert alert-danger">
+          <div *ngIf="otp.errors.required">
+            OTP is required.
+          </div>
+        </div>  
+      </div>
+
+      <div class="form-group otp-btn">
+        <button type="submit" class="btn form-control submit">Verify</button>
+      </div>
+    </div>
+    <span class="error-msg" *ngIf="showError">{{errorMsg}}</span>
+    </form> 
+    <div>
+      <span class="code-instruction">Didn't receive a code?</span>
+      <span class="resend">Resend Code</span>
+    </div>
+    <div>
+      <span class="code-instruction">Please verify your Email Address. We have sent the verification code to {{email}}</span>
+    </div>
+    <div>
+      <span class="code-instruction">Didn't receive Mail?</span>
+      <span class="resend">Resend Mail</span>
+  </div>
+    </div>
+    <div class="otp-success" *ngIf="otpVerified">
+      <img src="../../assets/images/mobile_otp.png">
+      <span>Your Mobile Number and E-mail ID has been succesfully verified!</span>
+      <button class="btn">Please share your details now</button>
+    </div>
+  </div>
+</div>

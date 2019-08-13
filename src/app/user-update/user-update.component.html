@@ -1,0 +1,663 @@
+<app-basic-details></app-basic-details>
+<app-education-details></app-education-details>
+<app-family-details></app-family-details>
+<!-- <div class="container">
+  <div class="form-container">
+    <div class="header">
+      <h3>Just Mew More Steps!</h3>
+      <p>Complete the profile and search your life partner.</p>
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+        <label class="header">Please enter your details</label>
+
+        <div class="form-group">
+          <label class="label" for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" minlength="4" [(ngModel)]="firstNameText" name="firstName" #firstName="ngModel" required>
+        
+          <div *ngIf="updateClicked && firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">
+              First Name is required.
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+              First Name must be atleast 4 charcaters long.
+            </div>
+          </div>  
+        </div>
+
+         <div class="form-group">
+          <label class="label" for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" minlength="1" [(ngModel)]="lastNameText" name="lastName" #lastName="ngModel" required>
+        
+          <div *ngIf="updateClicked && lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+            <div *ngIf="lastName.errors.required">
+              Last Name is required.
+            </div>
+            <div *ngIf="lastName.errors.minlength">
+              Last Name must be atleast 1 charcaters long.
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="email">Email</label>
+            <input type="text" disabled class="form-control" id="email" [(ngModel)]="emailText" name="email" #email="ngModel" required>
+        </div>
+
+       
+        <div class="form-group">
+            <label class="label" for="gender">Gender</label>
+            <div>
+                <label class="radio-inline"> <input type="radio" name="gender" value="male" [(ngModel)]="genderText" #gender="ngModel" required checked> Male </label>
+                <label class="radio-inline"> <input type="radio" name="gender" value="female" [(ngModel)]="genderText" #gender="ngModel" required> Female </label>
+            </div>
+            <div *ngIf="updateClicked && gender.invalid" class="alert alert-danger">
+                Gender is required.
+            </div> 
+        </div>
+         
+        <div class="form-group">
+          <label class="label" for="dob">DOB</label>
+          <input type="text" placeholder="Datepicker" class="form-control" [(ngModel)]="dobText" name="dob" #dob="ngModel" bsDatepicker required>
+          
+          <div *ngIf="updateClicked && dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+            DOB is required.
+          </div>
+        </div>
+        
+
+      <div class="form-group">
+          <label class="label" for="religion">Select your Religion</label>
+          <select name="religion" id="religion" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.religion?.length===0" class="alert alert-danger">
+            Religion is required.
+          </div>
+      </div>
+
+     
+       <div class="form-group">
+        <label class="label" for="mobile_number">Mobile Number</label>
+        <div class="code_number" >
+          <select name="code_number" ngModel required>
+              <option value="" disabled>Country Code</option>
+              <option *ngFor="let code of codes" [ngValue]="code.code">
+                {{ code.name }}
+              </option>
+            </select>
+            <input type="text" pattern="[0-9]*" placeholder="Mobile Number" class="form-control phone_number" id="mobile_number" required minlength="10" maxlength="10" [(ngModel)]="mobileNumberText" name="mobile_number" #mobile_number="ngModel" required>
+           </div>
+
+           <div *ngIf="updateClicked && updateForm.value.code_number?.length === 0 || mobile_number.invalid && (mobile_number.dirty || mobile_number.touched)" class="alert alert-danger">
+              <div *ngIf="updateForm.value.code_number?.length === 0" >
+                Please select code number
+              </div>  
+              <div *ngIf="mobile_number.errors.minlength">
+                Phone number must be 10 characters long.
+              </div>
+              <div *ngIf="mobile_number.errors.required">
+                Phone Number is required.
+              </div>
+              <div *ngIf="mobile_number.errors.pattern">
+                Enter a valid phone number
+              </div>
+           </div>
+      
+      </div>
+
+    
+
+      <div class="form-group">
+        <label class="label" for="alternative_number">Alternative Number</label>
+        <div class="code_number" >
+          <select name="code_number" ngModel required>
+              <option value="" disabled>Country Code</option>
+              <option *ngFor="let code of codes" [ngValue]="code.code">
+                {{ code.name }}
+              </option>
+            </select>
+            <input type="text" pattern="[0-9]*" placeholder="Alternative Number" class="form-control phone_number" id="alternative_number" required minlength="10" maxlength="10" [(ngModel)]="alternativeNumberText" name="alternative_number" #alternative_number="ngModel" required>
+          </div>
+
+          <div *ngIf="updateClicked && updateForm.value.code_number?.length === 0 || alternative_number.invalid && (alternative_number.dirty || alternative_number.touched)" class="alert alert-danger">
+            <div *ngIf="updateForm.value.code_number?.length === 0" >
+              Please select code number
+            </div>  
+            <div *ngIf="alternative_number.errors.minlength">
+              Phone number must be 10 characters long.
+            </div>
+            <div *ngIf="alternative_number.errors.required">
+              Phone Number is required.
+            </div>
+            <div *ngIf="alternative_number.errors.pattern">
+              Enter a valid phone number
+            </div>
+         </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="whatsapp_number">Whatsapp Number</label>
+        <div class="code_number" >
+          <select name="code_number" ngModel required>
+              <option value="" disabled>Country Code</option>
+              <option *ngFor="let code of codes" [ngValue]="code.code">
+                {{ code.name }}
+              </option>
+            </select>
+            <input type="text" pattern="[0-9]*" placeholder="Whatsapp Number" class="form-control phone_number" id="whatsapp_number" required minlength="10" maxlength="10" [(ngModel)]="whatsappNumberText" name="whatsapp_number" #whatsapp_number="ngModel" required>
+          </div>
+
+          <div *ngIf="updateClicked && updateForm.value.code_number?.length === 0 || whatsapp_number.invalid && (whatsapp_number.dirty || whatsapp_number.touched)" class="alert alert-danger">
+            <div *ngIf="updateForm.value.code_number?.length === 0" >
+              Please select code number
+            </div>  
+            <div *ngIf="whatsapp_number.errors.minlength">
+              Phone number must be 10 characters long.
+            </div>
+            <div *ngIf="whatsapp_number.errors.required">
+              Phone Number is required.
+            </div>
+            <div *ngIf="whatsapp_number.errors.pattern">
+              Enter a valid phone number
+            </div>
+         </div>
+
+      </div>
+
+      
+      <div class="form-group">
+          <label class="label" for="natinality">Select your Nationality</label>
+          <select name="nationality" id="nationality" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.nationality?.length===0" class="alert alert-danger">
+            Nationality is required.
+          </div>
+
+      </div>
+      
+       
+      <div class="form-group">
+          <label class="label" for="home_country">Select your Home Country</label>
+          <select name="home_country" id="home_country" ngModel>
+              <option value="" disabled>Select any one</option>
+              <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.home_country?.length===0" class="alert alert-danger">
+            Home Country is required.
+          </div>
+
+      </div>
+
+        
+      
+      <div class="form-group">
+          <label class="label" for="home_state">Select your Home State</label>
+          <select name="home_state" id="home_state" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.home_state?.length===0" class="alert alert-danger">
+            Home State is required.
+          </div>
+
+      </div>
+
+
+      
+      <div class="form-group">
+          <label class="label" for="home_city">Select your Home City</label>
+          <select name="home_city" id="home_city" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+
+          <div *ngIf="updateClicked && updateForm.value.home_city?.length===0" class="alert alert-danger">
+            Home City is required.
+          </div>
+
+      </div>
+
+     
+
+      <div class="form-group">
+          <label class="label" for="living_country">Select your Living Country</label>
+          <select name="living_country" id="living_country" ngModel>
+              <option value="" disabled>Select any one</option>
+              <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.living_country?.length===0" class="alert alert-danger">
+            Living Country is required.
+          </div>
+      </div>
+
+      
+
+      <div class="form-group">
+          <label class="label" for="living_state">Select your Living State</label>
+          <select name="living_state" id="living_state" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.living_state?.length===0" class="alert alert-danger">
+            Living State is required.
+          </div>
+      </div>
+
+     
+
+      <div class="form-group">
+          <label class="label" for="living_city">Select your Living City</label>
+          <select name="living_city" id="living_city" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let religion of religions" [ngValue]="religion">{{religion}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.living_city?.length===0" class="alert alert-danger">
+            Living City is required.
+          </div>
+      </div>
+
+ 
+
+      <div class="form-group">
+          <label class="label" for="education">Select your Education</label>
+          <select name="education" id="education" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let degree of degrees" [ngValue]="degrees">{{degree}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.education?.length===0" class="alert alert-danger">
+            Education is required.
+          </div>
+      </div>
+
+     
+
+      <div class="form-group">
+          <label class="label" for="occupation">Select your Occupation</label>
+          <select name="occupation" id="occupation" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let job of jobs" [ngValue]="job">{{job}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.occupation?.length===0" class="alert alert-danger">
+            Occupation is required.
+          </div>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label class="label" for="office_details">Office Details</label>
+        <input type="text" class="form-control" id="office_details" name="office_details" minlength="20" [(ngModel)]="officeDetailsText" #office_details="ngModel" required>
+      
+        <div *ngIf="updateClicked && office_details.invalid && (office_details.dirty || office_details.touched)" class="alert alert-danger">
+          <div *ngIf="office_details.errors.minlength">
+            Office details must be 20 characters long.
+          </div>
+          <div *ngIf="office_details.errors.required">
+            Office details is required.
+          </div>
+        </div>
+
+      </div>
+
+       
+
+      <div class="form-group">
+        <label class="label" for="monthly_income">Monthly Income</label>
+        <input type="text" class="form-control" id="monthly_income" name="monthly_income" [(ngModel)]="monthlyIncomeText" #monthly_income="ngModel" required>
+      
+        <div *ngIf="updateClicked && monthly_income.invalid && (monthly_income.dirty || monthly_income.touched)" class="alert alert-danger">
+          <div *ngIf="monthly_income.errors.required">
+            Monthly Income is required.
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="form-group">
+          <label class="label" for="caste">Select your Caste</label>
+          <select name="caste" id="caste" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let caste of castes" [ngValue]="caste">{{caste}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.caste?.length===0" class="alert alert-danger">
+            Caste is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="sub_caste">Sub Caste</label>
+        <input type="text" class="form-control" id="sub_caste" [(ngModel)]="subCasteText" name="sub_caste" #sub_caste="ngModel" required>
+     
+        <div *ngIf="updateClicked && sub_caste.invalid && (sub_caste.dirty || sub_caste.touched)" class="alert alert-danger">
+          <div *ngIf="sub_caste.errors.required">
+            Sub Caste is required.
+          </div>
+        </div>
+      </div>
+
+   
+      <div class="form-group">
+        <label class="label" for="father_name">Father Name</label>
+        <input type="text" class="form-control" id="father_name" [(ngModel)]="fatherNameText" minlength="4" name="father_name" #father_name="ngModel" required>
+      
+        <div *ngIf="updateClicked && father_name.invalid && (father_name.dirty || father_name.touched)" class="alert alert-danger">
+          <div *ngIf="father_name.errors.minlength">
+            Father Name must be atleast 4 characters long.
+          </div>
+          <div *ngIf="office_details.errors.required">
+            Father Name is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="father_name">Father Occupation</label>
+        <input type="text" class="form-control" id="father_occupation" [(ngModel)]="fatherOccupationText" name="father_occupation" #father_occupation="ngModel" required>
+      
+        <div *ngIf="updateClicked && father_occupation.invalid && (father_occupation.dirty || father_occupation.touched)" class="alert alert-danger">
+          <div *ngIf="father_occupation.errors.minlength">
+            Father Occupation must be atleast 4 characters long.
+          </div>
+          <div *ngIf="father_occupation.errors.required">
+            Father Occupation is required.
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="mother_name">Mother Name</label>
+        <input type="text" class="form-control" id="mother_name" [(ngModel)]="motherNameText" name="mother_name" #mother_name="ngModel" required>
+      
+        <div *ngIf="updateClicked && mother_name.invalid && (mother_name.dirty || mother_name.touched)" class="alert alert-danger">
+          <div *ngIf="mother_name.errors.minlength">
+            Mother Name must be atleast 4 characters long.
+          </div>
+          <div *ngIf="mother_name.errors.required">
+            Mother Name is required.
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label class="label" for="mother_occupation">Mother Occupation</label>
+        <input type="text" class="form-control" id="mother_occupation" [(ngModel)]="motherOccupationText" name="mother_occupation" #mother_occupation="ngModel" required>
+      
+        <div *ngIf="updateClicked && mother_occupation.invalid && (mother_occupation.dirty || mother_occupation.touched)" class="alert alert-danger">
+          <div *ngIf="mother_occupation.errors.minlength">
+            Mother Occupation must be atleast 4 characters long.
+          </div>
+          <div *ngIf="mother_name.errors.required">
+            Mother Occupation is required.
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="form-group">
+        <label class="label" for="no_of_siblings">No. of Siblings</label>
+        <input type="number" class="form-control" id="no_of_siblings" [(ngModel)]="noOfSiblingsText" name="no_of_siblings" #no_of_siblings="ngModel" required>
+      
+        <div *ngIf="updateClicked && no_of_siblings.invalid && (no_of_siblings.dirty || no_of_siblings.touched)" class="alert alert-danger">
+          <div *ngIf="no_of_siblings.errors.required">
+            No. of Siblings is required.
+          </div>
+        </div>
+      
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="family_type">Select your Family Type</label>
+          <select name="family_type" id="family_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let family_type of family_types" [ngValue]="family_type">{{family_type}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.family_type?.length===0" class="alert alert-danger">
+            Family Type is required.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="family_status">Select your Family Status</label>
+          <select name="family_status" id="family_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let family_status of family_statuses" [ngValue]="family_status">{{family_status}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.family_status?.length===0" class="alert alert-danger">
+            Family Status is required.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="profile_created_by">Profile Created By</label>
+          <select name="profile_created_by" id="profile_created_by" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let createdBy of profileCreatedBy" value="createdBy">{{createdBy}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.profile_created_by?.length===0" class="alert alert-danger">
+             For whom the profile is created for?.
+          </div>
+      </div>
+      
+        
+      <div class="form-group">
+        <label class="label" for="horoscope_id">Horoscope ID</label>
+        <input type="text" class="form-control" id="horoscope_id" minlength="4" [(ngModel)]="horoscopeIdText" name="horoscope_id" #horoscope_id="ngModel" required>
+      
+        <div *ngIf="updateClicked && horoscope_id.invalid && (horoscope_id.dirty || horoscope_id.touched)" class="alert alert-danger">
+          <div *ngIf="horoscope_id.errors.minlength">
+            Horoscope ID must be atleast 4 characters long.
+          </div>
+          <div *ngIf="horoscope_id.errors.required">
+            Horoscope ID is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="raasi">Select your Raasi</label>
+          <select name="raasi" id="raasi" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let raasi of raasis" value="raasi">{{raasi}}</option>
+          </select>
+           <div *ngIf="updateClicked && updateForm.value.raasi?.length===0" class="alert alert-danger">
+            Raasi is required.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="star">Select your Star</label>
+          <select name="star" id="star" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let star of stars" value="star">{{star}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.star?.length === 0" class="alert alert-danger">
+            Star details are required.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="dosham">Having Dosham?</label>
+        <div>
+            <label class="radio-inline"> <input type="radio" name="having_dosham" value="yes"  [(ngModel)]="havingDoshamText" #having_dosham="ngModel" required checked> Yes </label>
+            <label class="radio-inline"> <input type="radio" name="having_dosham" value="no"  [(ngModel)]="havingDoshamText" #having_dosham="ngModel" required> No </label>
+        </div>
+        <div *ngIf="updateClicked && having_dosham.invalid" class="alert alert-danger">
+          Please mention whether you are into dosham or not.
+        </div>
+      </div>
+
+   
+      <div class="form-group">
+          <label class="label" for="dosham">Dosham Details</label>
+          <select name="dosham" id="dosham" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let dosham of doshams" value="dosham">{{dosham}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.dosham?.length===0" class="alert alert-danger">
+            Dosham details are required.
+          </div>
+      </div>
+
+  
+       <div class="form-group">
+        <label class="label" for="height">Height</label>
+        <input type="number" class="form-control height" id="feet" [(ngModel)]="feetText" name="feet" #feet="ngModel" required>
+        <input type="number" class="form-control height" id="inches" [(ngModel)]="inchesText" name="inches" #inches="ngModel" required>
+      
+        <div *ngIf="updateClicked && feet.invalid && (feet.dirty || feet.touched)" class="alert alert-danger">
+          <div *ngIf="feet.errors.required">
+            Feet is required.
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="form-group">
+        <label class="label" for="height">Weight</label>
+        <input type="number" class="form-control height" id="kg" [(ngModel)]="kgText" name="kg" #kg="ngModel" required>
+        <input type="number" class="form-control height" id="gms" [(ngModel)]="gmsText" name="gms" #gms="ngModel" required>
+      
+        <div *ngIf="updateClicked && kg.invalid && (kg.dirty || kg.touched)" class="alert alert-danger">
+          <div *ngIf="kg.errors.required">
+            Weight is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="body_type">Body Type</label>
+          <select name="body_type" id="body_type" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let bodyType of bodyTypes" value="bodyType">{{bodyType}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.body_type?.length===0" class="alert alert-danger">
+            Your body type details are required.
+          </div>
+      </div>
+
+    
+      <div class="form-group">
+          <label class="label" for="complexion">Your Complexion</label>
+          <select name="complexion" id="complexion" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let complexion of complexions" value="complexion">{{complexion}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.complexion?.length===0" class="alert alert-danger">
+             Your complexion details are required.
+          </div>
+      </div>
+
+        
+      <div class="form-group">
+        <label class="label" for="physical_status">Physical Status</label>
+        <div>
+            <label class="radio-inline"> <input type="radio" name="physical_status" value="yes" [(ngModel)]="physicalStatusText" #physical_status="ngModel" required checked> Yes </label>
+            <label class="radio-inline"> <input type="radio" name="physical_status" value="no" [(ngModel)]="physicalStatusText" #physical_status="ngModel" required> No </label>
+        </div>
+        <div *ngIf="updateClicked && physical_status.invalid" class="alert alert-danger">
+          Please mention whether your physical status.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="smoking_habits">Smoking Habits?</label>
+        <div>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="yes" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required checked> Yes </label>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="no" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required> No </label>
+            <label class="radio-inline"> <input type="radio" name="smoking_habits" value="later" [(ngModel)]="smokingHabitsText" #smoking_habits="ngModel" required> Later </label>
+        </div>
+        <div *ngIf="updateClicked && smoking_habits.invalid" class="alert alert-danger">
+          Information about Smoking Habits is required.
+        </div> 
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="drinking_habits">Drinking Habits?</label>
+        <div>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="yes" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required checked> Yes </label>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="no" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required> No </label>
+          <label class="radio-inline"> <input type="radio" name="drinking_habits" value="later" [(ngModel)]="drinkingHabitsText" #drinking_habits="ngModel" required> Later </label>
+        </div>
+        <div *ngIf="updateClicked && drinking_habits.invalid" class="alert alert-danger">
+          Information about Drinking Habits is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="eating_habits">Eating Habits?</label>
+        <div>
+          <label class="radio-inline"> <input type="radio" name="eating_habits" value="vegetarian" [(ngModel)]="eatingHabitsText" #eating_habits="ngModel" required checked> Vegetarian </label>
+          <label class="radio-inline"> <input type="radio" name="eating_habits" value="non-vegetarian" [(ngModel)]="eatingHabitsText" #eating_habits="ngModel" required> Non Vegetarian </label>
+          <label class="radio-inline"> <input type="radio" name="eating_habits" value="eggetarian" [(ngModel)]="eatingHabitsText" #eating_habits="ngModel" required> Eggetarian </label>
+        </div>
+        <div *ngIf="updateClicked && eating_habits.invalid" class="alert alert-danger">
+          Information about Eating Habits is required.
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="about_myself">About Myself</label>
+        <textarea class="form-control" id="about_myself" [(ngModel)]="aboutMyself" minlength="20" name="about_myself" #about_myself="ngModel" required></textarea>
+      
+        <div *ngIf="updateClicked && about_myself.invalid && (about_myself.dirty || about_myself.touched)" class="alert alert-danger">
+          <div *ngIf="about_myself.errors.minlength">
+            About youself must be atleast 20 characters long.
+          </div>
+          <div *ngIf="about_myself.errors.required">
+            About youself is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label class="label" for="marital_status">Marital Status</label>
+          <select name="marital_status" id="marital_status" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let maritalStatus of maritalStatuses" value="maritalStatus">{{maritalStatus}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.marital_status?.length===0" class="alert alert-danger">
+            Your marital status is mandatory.
+          </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="label" for="no_of_children">No. of Children</label>
+        <input type="number" class="form-control" id="no_of_children" [(ngModel)]="noOfChildrenText" name="no_of_children" #no_of_children="ngModel" required>
+        <div *ngIf="updateClicked && no_of_children.invalid && (no_of_children.dirty || no_of_children.touched)" class="alert alert-danger">
+          <div *ngIf="no_of_children.errors.required">
+            No. of Children is required.
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div> -->

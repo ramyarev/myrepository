@@ -1,0 +1,51 @@
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+    // margin-bottom: 30px;
+    // position: relative;
+    text-align: center;
+    position: relative;
+    background: white;
+    padding-top: 30px;
+    // border: 0.1px solid rgb(231, 230, 230);
+    .header {
+        color: #1F5D76;
+        font-weight: 700;
+        font-size: 20px;
+        //  text-shadow: 1px 1px gray;
+    }
+    .feature-container {
+        // padding: 50px;
+        // width: 100%;
+        position: relative;
+        .privacy-items {
+            // width: 60%;
+            float: left;
+            padding-right: 100px;
+            .feature-item {
+                position: relative;
+                height: 80px;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    left: 0;
+                }
+                span {
+                    font-family: Futura Book Regular;
+                    position: relative;
+                    left: 70px;
+                    &.desc {
+                        color: #333333;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .privacy-img {
+            float: left;
+            // width: 40%;
+            // margin-top: 5%;
+        }
+    }
+}

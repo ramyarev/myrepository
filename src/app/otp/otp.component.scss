@@ -1,0 +1,124 @@
+.container {
+    overflow: hidden;
+    background: url('../../assets/images/bgstories.png');
+    background-size: 100% 100%;
+    min-height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    .header {
+        background: url('../../assets/images/otp-header.png');
+        height: 10%;
+        width: 100%;
+        overflow: hidden;
+        .logo {
+            width: 200px;
+            margin-left: 20px;
+        }
+    }
+    .content {
+        background: url('../../assets/images/bgstories.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 40%;
+        max-height: 80%;
+        min-height: 70%;
+        left: 30%;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .title {
+            font-size: 20px;
+            color: #1d5d77;
+            font-weight: 400;
+        }
+        .question {
+            font-size: 20px;
+            color: #de3c93;
+            font-weight: 400;
+        }
+        .image-content {
+            overflow: hidden;
+            height: 100px;
+            img {
+                width: 100px;
+                float: left;
+            }
+            .otp-message {
+                text-align: end;
+                display: block;
+                float: right;
+                margin-top: 20px;
+                width: calc(100% - 100px);
+                font-size: 12px;
+                position: relative;
+                text-align: end;
+            }
+        }
+        .code-instruction {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+
+            .otp-text {
+                width: 70%;
+                float: left;
+            }
+            .otp-btn {
+                width: 30%;
+                float: left;
+            }
+
+            input[type=text] {
+                width: 100%;
+                margin: 0 auto;
+                font-size: 14px;
+                box-shadow: none;
+                border-radius: 0;
+                border: 0.5px solid #1d5d77;
+                height: 40px;
+            }
+            .submit {
+                width: 100%;
+                background:hotpink;
+                border: none;
+                border-radius: 0;
+                color: white;
+                font-size: 14px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+        .resend {
+            color: #de3c93;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .otp-success {
+            text-align: center;
+            img {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                position: relative;
+            }
+            span {
+                display: block;
+                text-align: left;
+            }
+            button {
+                background: #de3c93;
+                cursor: pointer;
+                margin-top: 20px;
+                font-size: 16px;
+                padding-left: 30px;
+                padding-right: 30px;
+                color: white;
+            }
+
+        }
+    }
+}

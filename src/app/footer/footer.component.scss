@@ -1,0 +1,92 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    font-family: Futura Book Regular;
+    .header {
+        font-size: 24px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .shortcut-menu {
+        background: white;
+        overflow: hidden;
+        color: black;
+        font-size: 14px;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        margin: 0px;
+        .menu-row {
+            margin-top: 10px;
+            height: auto;
+            &.row {
+                width: 100%;
+                margin: 0px;
+            }
+            button {
+                margin-right: 10px;
+                border-radius: 20px;
+                padding: 5px 20px 5px 20px;
+                border: none;
+                background: #1F5D76;
+                color: white;
+                font-size: 14px;
+            }
+            .menu-col {
+                margin-right: 10px;
+                cursor: pointer;
+                border-right: 0.5px solid #333333;
+                padding-right: 10px;
+                &:hover {
+                    color: #1F5D76
+                }
+            }
+        }
+    }
+    .footer {
+        padding-top: 50px;
+        background: rgb(41, 41, 41);
+        overflow: hidden;
+        ul {
+            color: rgb(209, 206, 206);
+            float: left;
+            font-weight: 200;
+            font-size: 12px;
+            list-style-image: url('../../assets/images/tick_white.png');
+            .title {
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+        }
+        .follow {
+            float: left;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            .label {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            img {
+                width: 25px;
+                height: 25px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.copyright {
+    color: white;
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+    background: rgb(20, 20, 20);
+    font-family: Futura Book Regular;
+}

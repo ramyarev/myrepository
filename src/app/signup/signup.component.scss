@@ -1,0 +1,198 @@
+.signUp {
+    font-family: Futura Book Regular;
+    .form-group {
+        border-radius: 0px;
+    }
+    .signup-header {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        .slogan {
+            // color: #e6193a;
+            font-size: 18px;
+        }
+        .title {
+            font-size: 26px;
+            color: #1d5d77;
+            font-family: OptimusPrinceps;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    form {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 14px;
+        border: none;
+        text-align: left;
+        .alert {
+            // background: transparent;
+            padding: 5px;
+            margin: 0px;
+            border: none;
+        }
+        .alert-danger {
+            font-size: 12px;
+            color: red;
+        }
+        .form-title {
+            font-size: 30px;
+            text-align: center;
+        }
+        .profile {
+            &.form-control {
+                border-radius: 0px !important;
+                padding: 1px;
+                border: 0.5px solid gray;
+            }
+        }
+        select.profile_for {
+            width: 100%;
+            height: 35px;
+            font-size: 14px;
+            padding: 5px;
+            background: #ffffff;
+            border: none;
+            color: #495057;
+        }
+        .code_number {
+            &.form-control {
+                border-radius: 0px !important;
+                padding: 1px;
+                border: 0.5px solid gray;
+            }
+            max-width: 31%;
+            margin-right: 5%;
+            overflow: hidden;
+            height: 40px;
+            float: left;
+            select {
+                height: 100%;
+                width: 100%;
+                border: 0.5px solid white;
+                border-radius: 0;
+                background: #ffffff;
+                color: #495057;
+                font-size: 14px;
+            }
+        }
+        .form-group {
+            margin-bottom: 5px;
+            overflow: hidden;
+            .form-control {
+                height: 38px;
+                margin: 0;
+                &.phone_number {
+                    float: left;
+                    width: 64%;
+                    margin-left: 5%;
+                }
+            }
+            input:focus {
+                border: 1.5px solid #e6193a;
+                box-shadow: none;
+            }
+        }
+        .error-msg {
+            color: #e6193a;
+            font-size: 12px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .signup {
+            width: 100%;
+            font-size: 14px;
+            height: 35px;
+            text-align: center;
+            margin-top: 20px;
+            background: #e6193a;
+            color: white;
+        }
+        button {
+            font-size: 14px;
+            height: 35px;
+            text-align: center;
+        }
+        h1,
+        button {
+            font-family: Futura Book Regular;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        input {
+            margin: 10px 10px;
+            display: block;
+            border: 0.5px solid gray;
+            border-radius: 0;
+            padding-left: 10px;
+            font-size: 14px;
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            &.ng-invalid.ng-touched {
+                border: 1.5px solid red;
+            }
+        }
+        button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            color: white;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+        // button:hover {
+        //     -webkit-transform: translateY(-3px);
+        //     -ms-transform: translateY(-3px);
+        //     transform: translateY(-3px);
+        //     box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+        // }
+        .login-option {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            .login-btn {
+                margin-left: 10px;
+                color: #e6193a;
+                cursor: pointer;
+            }
+        }
+        .gender-group {
+            input {
+                margin: 0;
+                margin-top: 5px;
+                margin-right: 10px;
+            }
+        }
+        ng-datepicker {
+            .is-disabled {
+                cursor: pointer;
+            }
+        }
+        .stay-signed {
+            position: relative;
+            font-size: 14px;
+            input {
+                float: left;
+                width: 18px;
+                height: 18px;
+                vertical-align: middle;
+                margin-left: 0;
+            }
+            span {
+                float: left;
+                vertical-align: middle;
+            }
+            .forget-password {
+                right: 0;
+                color: 14px;
+                color: #1d5d77;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="form-container">
+    <div class="header">
+      <h3>Update Education Details</h3>
+      <img class="progressbar" src="../../../assets/images/progress-bar-40.png">
+    </div>
+    <form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm">
+      
+      <div class="form-group">
+          <label class="label" for="education">Select your Education</label>
+          <select name="education" id="education" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let degree of degrees" [ngValue]="degrees">{{degree}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.education?.length===0" class="alert alert-danger">
+            Education is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="label" for="occupation">Select your Occupation</label>
+          <select name="occupation" id="occupation" ngModel>
+            <option value="" disabled>Select any one</option>
+            <option *ngFor="let job of jobs" [ngValue]="job">{{job}}</option>
+          </select>
+          <div *ngIf="updateClicked && updateForm.value.occupation?.length===0" class="alert alert-danger">
+            Occupation is required.
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="office_details">Office Details</label>
+        <input type="text" class="form-control" id="office_details" name="office_details" minlength="20" [(ngModel)]="officeDetailsText" #office_details="ngModel" required>
+      
+        <div *ngIf="updateClicked && office_details.invalid && (office_details.dirty || office_details.touched)" class="alert alert-danger">
+          <div *ngIf="office_details.errors.minlength">
+            Office details must be 20 characters long.
+          </div>
+          <div *ngIf="office_details.errors.required">
+            Office details is required.
+          </div>
+        </div>
+
+      </div>
+     
+      <div class="form-group">
+        <label class="label" for="monthly_income">Monthly Income</label>
+        <input type="text" class="form-control" id="monthly_income" name="monthly_income" [(ngModel)]="monthlyIncomeText" #monthly_income="ngModel" required>
+      
+        <div *ngIf="updateClicked && monthly_income.invalid && (monthly_income.dirty || monthly_income.touched)" class="alert alert-danger">
+          <div *ngIf="monthly_income.errors.required">
+            Monthly Income is required.
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success submit">Update</button>
+  
+    </form>
+  </div> 
+</div>

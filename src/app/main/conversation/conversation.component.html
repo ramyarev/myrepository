@@ -1,0 +1,35 @@
+<div class="conversation-container">
+<div class="row">
+  <div class="col-6">
+    <label class="left-title">Your Conversations</label>
+    <ul class="chat-list">
+      <li class="chat-item" *ngFor="let chat of chats" (click)="onChatSelected(chat)">
+        <img class="user-image" src="../../../assets/images/coverimage.jpg" class="user-image">
+        <div class="chat-detail vertical-center">
+          <span class="user-name">Surendar</span>
+          <span class="message">This is message</span>
+        </div>
+        <span class="date">2 days ago</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6" *ngIf="selectedChat">
+    <label class="left-title">Suren's Chats</label>
+    <ul class="message-list">
+      <li class="chat-item" *ngFor="let msg of selectedChat?.messages" [ngClass]="(msg.user_id == '1')?'sent':'received'">
+        <img class="user-image" src="../../../assets/images/coverimage.jpg" class="user-image">
+        <div class="chat-detail vertical-center">
+          <span class="message">{{msg.message}}</span>
+        </div>
+        <span class="date">{{msg.date_time}}</span>
+      </li>
+    </ul>
+    <form (ngSubmit)="sendMessage(chatForm)" #chatForm="ngForm">
+        <div class="form-group">
+          <input name="message" class="form-control" placeholder="Type your message here.." ngModel>
+        </div>
+        <button type="submit" class="btn btn-success">Send</button>
+    </form>
+  </div>
+</div>
+</div>

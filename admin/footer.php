@@ -1,0 +1,1 @@
+ <footer class="footer text-center"> 2019 &copy; NAMMA MATRIMONY Designer by <a href="https://skyappzsoftware.in/">Skyappz Software India PVT LTD </a> </footer>
